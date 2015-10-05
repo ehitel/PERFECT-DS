@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PERFECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_USUARIO" Type="varchar" Mode="In" />
+          <Parameter Name="CODIGO_MODULO" Type="varchar" Mode="In" />
+          <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="PERFECTModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PERFECTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PERFECTEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" ReturnType="Collection(PERFECTModel.PERMISO_USUARIO_MODULO)">
+            <Parameter Name="CODIGO_USUARIO" Mode="In" Type="String" />
+            <Parameter Name="CODIGO_MODULO" Mode="In" Type="String" />
+            <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="PERMISO_USUARIO_MODULO">
+          <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMBRE_CATEGORIA" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CODIGO_PROGRAMA" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="NOMBRE_PROGRAMA" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NOMBRE_FORMULARIO" Nullable="false" MaxLength="500" />
+          <Property Type="String" Name="NOMBRE_IMAGEN" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="POSICION" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PERFECTModelStoreContainer" CdmEntityContainer="PERFECTEntities" >
+          <FunctionImportMapping FunctionImportName="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" FunctionName="PERFECTModel.Store.SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.PERMISO_USUARIO_MODULO">
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="CODIGO_PROGRAMA" ColumnName="CODIGO_PROGRAMA" />
+                <ScalarProperty Name="NOMBRE_PROGRAMA" ColumnName="NOMBRE_PROGRAMA" />
+                <ScalarProperty Name="NOMBRE_FORMULARIO" ColumnName="NOMBRE_FORMULARIO" />
+                <ScalarProperty Name="NOMBRE_IMAGEN" ColumnName="NOMBRE_IMAGEN" />
+                <ScalarProperty Name="POSICION" ColumnName="POSICION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
