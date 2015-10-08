@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
@@ -43,17 +41,21 @@
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinScrollBar.ScrollBarLook scrollBarLook1 = new Infragistics.Win.UltraWinScrollBar.ScrollBarLook();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinEditors.EditorButton editorButton1 = new Infragistics.Win.UltraWinEditors.EditorButton("Limpiar");
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinEditors.EditorButton editorButton2 = new Infragistics.Win.UltraWinEditors.EditorButton("Buscar");
+            Infragistics.Win.UltraWinScrollBar.ScrollBarLook scrollBarLook1 = new Infragistics.Win.UltraWinScrollBar.ScrollBarLook();
             Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinEditors.EditorButton editorButton1 = new Infragistics.Win.UltraWinEditors.EditorButton("Limpiar");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinEditors.EditorButton editorButton2 = new Infragistics.Win.UltraWinEditors.EditorButton("Buscar");
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             this.ultraFormManager1 = new Infragistics.Win.UltraWinForm.UltraFormManager(this.components);
             this._MainWindow_UltraFormManager_Dock_Area_Left = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this._MainWindow_UltraFormManager_Dock_Area_Right = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
@@ -73,6 +75,15 @@
             this.menuLateralEnableButton = new System.Windows.Forms.PictureBox();
             this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.menuLateralSplitter = new Infragistics.Win.Misc.UltraSplitter();
+            this.panelError = new Infragistics.Win.Misc.UltraPanel();
+            this.errorSplitter = new Infragistics.Win.Misc.UltraSplitter();
+            this.errorTituloPanel = new Infragistics.Win.Misc.UltraPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.errorPanelCerrarPicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).BeginInit();
             this.menuLateralPanel.ClientArea.SuspendLayout();
             this.menuLateralPanel.SuspendLayout();
@@ -86,38 +97,46 @@
             this.ultraPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).BeginInit();
+            this.panelError.ClientArea.SuspendLayout();
+            this.panelError.SuspendLayout();
+            this.errorTituloPanel.ClientArea.SuspendLayout();
+            this.errorTituloPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ultraFormManager1
             // 
             this.ultraFormManager1.Form = this;
-            appearance17.BackColor = System.Drawing.Color.White;
-            appearance17.BackColor2 = System.Drawing.Color.White;
-            appearance17.BorderColor = System.Drawing.Color.White;
-            appearance17.BorderColor2 = System.Drawing.Color.White;
-            appearance17.BorderColor3DBase = System.Drawing.Color.Navy;
-            appearance17.FontData.SizeInPoints = 14F;
-            appearance17.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ultraFormManager1.FormStyleSettings.CaptionAreaActiveAppearance = appearance17;
-            appearance18.BackColor = System.Drawing.Color.White;
-            appearance18.BackColor2 = System.Drawing.Color.White;
-            appearance18.BorderColor = System.Drawing.Color.White;
-            appearance18.BorderColor2 = System.Drawing.Color.White;
-            appearance18.BorderColor3DBase = System.Drawing.Color.Navy;
-            appearance18.FontData.BoldAsString = "True";
-            appearance18.FontData.SizeInPoints = 14F;
-            this.ultraFormManager1.FormStyleSettings.CaptionAreaAppearance = appearance18;
             appearance19.BackColor = System.Drawing.Color.White;
             appearance19.BackColor2 = System.Drawing.Color.White;
             appearance19.BorderColor = System.Drawing.Color.White;
             appearance19.BorderColor2 = System.Drawing.Color.White;
             appearance19.BorderColor3DBase = System.Drawing.Color.Navy;
-            this.ultraFormManager1.FormStyleSettings.FormBorderAppearance = appearance19;
+            appearance19.FontData.SizeInPoints = 14F;
+            appearance19.ForeColor = System.Drawing.Color.SteelBlue;
+            this.ultraFormManager1.FormStyleSettings.CaptionAreaActiveAppearance = appearance19;
             appearance20.BackColor = System.Drawing.Color.White;
             appearance20.BackColor2 = System.Drawing.Color.White;
             appearance20.BorderColor = System.Drawing.Color.White;
             appearance20.BorderColor2 = System.Drawing.Color.White;
-            this.ultraFormManager1.FormStyleSettings.MaximizedMdiChildFormCaptionAreaAppearance = appearance20;
+            appearance20.BorderColor3DBase = System.Drawing.Color.Navy;
+            appearance20.FontData.BoldAsString = "True";
+            appearance20.FontData.SizeInPoints = 14F;
+            this.ultraFormManager1.FormStyleSettings.CaptionAreaAppearance = appearance20;
+            appearance21.BackColor = System.Drawing.Color.White;
+            appearance21.BackColor2 = System.Drawing.Color.White;
+            appearance21.BorderColor = System.Drawing.Color.White;
+            appearance21.BorderColor2 = System.Drawing.Color.White;
+            appearance21.BorderColor3DBase = System.Drawing.Color.Navy;
+            this.ultraFormManager1.FormStyleSettings.FormBorderAppearance = appearance21;
+            appearance22.BackColor = System.Drawing.Color.White;
+            appearance22.BackColor2 = System.Drawing.Color.White;
+            appearance22.BorderColor = System.Drawing.Color.White;
+            appearance22.BorderColor2 = System.Drawing.Color.White;
+            this.ultraFormManager1.FormStyleSettings.MaximizedMdiChildFormCaptionAreaAppearance = appearance22;
             this.ultraFormManager1.FormStyleSettings.Style = Infragistics.Win.UltraWinForm.UltraFormStyle.Office2010;
             this.ultraFormManager1.UseAppStyling = false;
             // 
@@ -174,14 +193,14 @@
             // 
             // menuLateralPanel
             // 
-            appearance3.BackColor = System.Drawing.Color.White;
-            appearance3.BackColor2 = System.Drawing.Color.White;
-            appearance3.BackColorDisabled = System.Drawing.Color.White;
-            appearance3.BackColorDisabled2 = System.Drawing.Color.White;
-            appearance3.BorderColor = System.Drawing.Color.White;
-            appearance3.BorderColor2 = System.Drawing.Color.White;
-            appearance3.BorderColor3DBase = System.Drawing.Color.White;
-            this.menuLateralPanel.Appearance = appearance3;
+            appearance5.BackColor = System.Drawing.Color.White;
+            appearance5.BackColor2 = System.Drawing.Color.White;
+            appearance5.BackColorDisabled = System.Drawing.Color.White;
+            appearance5.BackColorDisabled2 = System.Drawing.Color.White;
+            appearance5.BorderColor = System.Drawing.Color.White;
+            appearance5.BorderColor2 = System.Drawing.Color.White;
+            appearance5.BorderColor3DBase = System.Drawing.Color.White;
+            this.menuLateralPanel.Appearance = appearance5;
             // 
             // menuLateralPanel.ClientArea
             // 
@@ -197,45 +216,45 @@
             // 
             // menuLateralBar
             // 
-            appearance4.BackColor = System.Drawing.Color.White;
-            appearance4.BackColor2 = System.Drawing.Color.White;
-            appearance4.BorderColor = System.Drawing.Color.White;
-            appearance4.BorderColor2 = System.Drawing.Color.White;
-            appearance4.BorderColor3DBase = System.Drawing.Color.White;
-            this.menuLateralBar.Appearance = appearance4;
-            this.menuLateralBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuLateralBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            appearance5.BackColor = System.Drawing.Color.Gray;
-            appearance5.BackColor2 = System.Drawing.Color.Silver;
-            this.menuLateralBar.GroupSettings.AppearancesLarge.ActiveHeaderAppearance = appearance5;
             appearance6.BackColor = System.Drawing.Color.White;
             appearance6.BackColor2 = System.Drawing.Color.White;
-            this.menuLateralBar.GroupSettings.AppearancesLarge.HeaderAppearance = appearance6;
-            appearance7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            appearance7.BackColor2 = System.Drawing.Color.White;
-            this.menuLateralBar.GroupSettings.AppearancesLarge.HeaderHotTrackAppearance = appearance7;
-            appearance8.BackColor = System.Drawing.Color.Silver;
-            appearance8.BackColor2 = System.Drawing.Color.Silver;
-            this.menuLateralBar.GroupSettings.AppearancesSmall.ActiveHeaderAppearance = appearance8;
-            appearance9.BackColor = System.Drawing.Color.White;
+            appearance6.BorderColor = System.Drawing.Color.White;
+            appearance6.BorderColor2 = System.Drawing.Color.White;
+            appearance6.BorderColor3DBase = System.Drawing.Color.White;
+            this.menuLateralBar.Appearance = appearance6;
+            this.menuLateralBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuLateralBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            appearance7.BackColor = System.Drawing.Color.Gray;
+            appearance7.BackColor2 = System.Drawing.Color.Silver;
+            this.menuLateralBar.GroupSettings.AppearancesLarge.ActiveHeaderAppearance = appearance7;
+            appearance8.BackColor = System.Drawing.Color.White;
+            appearance8.BackColor2 = System.Drawing.Color.White;
+            this.menuLateralBar.GroupSettings.AppearancesLarge.HeaderAppearance = appearance8;
+            appearance9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             appearance9.BackColor2 = System.Drawing.Color.White;
-            appearance9.BorderColor = System.Drawing.Color.Gray;
-            appearance9.BorderColor2 = System.Drawing.Color.DimGray;
-            appearance9.FontData.SizeInPoints = 12F;
-            this.menuLateralBar.GroupSettings.AppearancesSmall.HeaderAppearance = appearance9;
+            this.menuLateralBar.GroupSettings.AppearancesLarge.HeaderHotTrackAppearance = appearance9;
+            appearance10.BackColor = System.Drawing.Color.Silver;
+            appearance10.BackColor2 = System.Drawing.Color.Silver;
+            this.menuLateralBar.GroupSettings.AppearancesSmall.ActiveHeaderAppearance = appearance10;
+            appearance11.BackColor = System.Drawing.Color.White;
+            appearance11.BackColor2 = System.Drawing.Color.White;
+            appearance11.BorderColor = System.Drawing.Color.Gray;
+            appearance11.BorderColor2 = System.Drawing.Color.DimGray;
+            appearance11.FontData.SizeInPoints = 12F;
+            this.menuLateralBar.GroupSettings.AppearancesSmall.HeaderAppearance = appearance11;
             this.menuLateralBar.GroupSettings.BorderStyleItemArea = Infragistics.Win.UIElementBorderStyle.None;
             this.menuLateralBar.GroupSettings.Style = Infragistics.Win.UltraWinExplorerBar.GroupStyle.LargeImagesWithText;
             this.menuLateralBar.ImageSizeLarge = new System.Drawing.Size(28, 28);
-            appearance10.BackColor = System.Drawing.Color.LightGray;
-            appearance10.BorderColor = System.Drawing.Color.White;
-            this.menuLateralBar.ItemSettings.AppearancesLarge.ActiveAppearance = appearance10;
-            appearance11.BackColor = System.Drawing.Color.White;
-            appearance11.BackColor2 = System.Drawing.Color.White;
-            appearance11.BorderColor = System.Drawing.Color.White;
-            this.menuLateralBar.ItemSettings.AppearancesLarge.Appearance = appearance11;
             appearance12.BackColor = System.Drawing.Color.LightGray;
-            appearance12.BackColor2 = System.Drawing.Color.LightGray;
-            this.menuLateralBar.ItemSettings.AppearancesSmall.ActiveAppearance = appearance12;
+            appearance12.BorderColor = System.Drawing.Color.White;
+            this.menuLateralBar.ItemSettings.AppearancesLarge.ActiveAppearance = appearance12;
+            appearance13.BackColor = System.Drawing.Color.White;
+            appearance13.BackColor2 = System.Drawing.Color.White;
+            appearance13.BorderColor = System.Drawing.Color.White;
+            this.menuLateralBar.ItemSettings.AppearancesLarge.Appearance = appearance13;
+            appearance14.BackColor = System.Drawing.Color.LightGray;
+            appearance14.BackColor2 = System.Drawing.Color.LightGray;
+            this.menuLateralBar.ItemSettings.AppearancesSmall.ActiveAppearance = appearance14;
             this.menuLateralBar.Location = new System.Drawing.Point(0, 80);
             this.menuLateralBar.Name = "menuLateralBar";
             scrollBarLook1.ViewStyle = Infragistics.Win.UltraWinScrollBar.ScrollBarViewStyle.ScenicRibbon;
@@ -261,17 +280,17 @@
             // 
             this.menuLateralFiltroTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            appearance13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            appearance13.BorderColor2 = System.Drawing.Color.Gray;
-            appearance13.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.menuLateralFiltroTextBox.Appearance = appearance13;
+            appearance15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            appearance15.BorderColor2 = System.Drawing.Color.Gray;
+            appearance15.BorderColor3DBase = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.menuLateralFiltroTextBox.Appearance = appearance15;
             this.menuLateralFiltroTextBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Rounded3;
-            appearance14.Image = ((object)(resources.GetObject("appearance14.Image")));
-            editorButton1.Appearance = appearance14;
+            appearance16.Image = ((object)(resources.GetObject("appearance16.Image")));
+            editorButton1.Appearance = appearance16;
             editorButton1.ButtonStyle = Infragistics.Win.UIElementButtonStyle.ScenicRibbonButton;
             editorButton1.Key = "Limpiar";
-            appearance15.Image = ((object)(resources.GetObject("appearance15.Image")));
-            editorButton2.Appearance = appearance15;
+            appearance17.Image = ((object)(resources.GetObject("appearance17.Image")));
+            editorButton2.Appearance = appearance17;
             editorButton2.ButtonStyle = Infragistics.Win.UIElementButtonStyle.ScenicRibbonButton;
             editorButton2.Key = "Buscar";
             this.menuLateralFiltroTextBox.ButtonsRight.Add(editorButton1);
@@ -280,12 +299,15 @@
             this.menuLateralFiltroTextBox.Location = new System.Drawing.Point(9, 9);
             this.menuLateralFiltroTextBox.Name = "menuLateralFiltroTextBox";
             this.menuLateralFiltroTextBox.NullText = "Filtrar opciones";
-            appearance16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            appearance16.FontData.ItalicAsString = "True";
-            appearance16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            appearance16.TextHAlignAsString = "Center";
-            appearance16.TextVAlignAsString = "Middle";
-            this.menuLateralFiltroTextBox.NullTextAppearance = appearance16;
+            appearance18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            appearance18.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            appearance18.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance18.BackGradientStyle = Infragistics.Win.GradientStyle.GlassTop50;
+            appearance18.FontData.ItalicAsString = "True";
+            appearance18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            appearance18.TextHAlignAsString = "Center";
+            appearance18.TextVAlignAsString = "Middle";
+            this.menuLateralFiltroTextBox.NullTextAppearance = appearance18;
             this.menuLateralFiltroTextBox.Size = new System.Drawing.Size(241, 23);
             this.menuLateralFiltroTextBox.TabIndex = 0;
             this.menuLateralFiltroTextBox.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
@@ -358,14 +380,14 @@
             // 
             // ultraPanel1
             // 
-            appearance2.BackColor = System.Drawing.Color.White;
-            appearance2.BackColor2 = System.Drawing.Color.White;
-            appearance2.BackColorDisabled = System.Drawing.Color.White;
-            appearance2.BackColorDisabled2 = System.Drawing.Color.White;
-            appearance2.BorderColor = System.Drawing.Color.White;
-            appearance2.BorderColor2 = System.Drawing.Color.White;
-            appearance2.BorderColor3DBase = System.Drawing.Color.White;
-            this.ultraPanel1.Appearance = appearance2;
+            appearance4.BackColor = System.Drawing.Color.White;
+            appearance4.BackColor2 = System.Drawing.Color.White;
+            appearance4.BackColorDisabled = System.Drawing.Color.White;
+            appearance4.BackColorDisabled2 = System.Drawing.Color.White;
+            appearance4.BorderColor = System.Drawing.Color.White;
+            appearance4.BorderColor2 = System.Drawing.Color.White;
+            appearance4.BorderColor3DBase = System.Drawing.Color.White;
+            this.ultraPanel1.Appearance = appearance4;
             // 
             // ultraPanel1.ClientArea
             // 
@@ -391,20 +413,22 @@
             // 
             // ultraTabbedMdiManager1
             // 
-            appearance21.BackColor = System.Drawing.Color.White;
-            appearance21.BackColor2 = System.Drawing.Color.White;
-            this.ultraTabbedMdiManager1.Appearance = appearance21;
+            appearance23.BackColor = System.Drawing.Color.White;
+            appearance23.BackColor2 = System.Drawing.Color.White;
+            this.ultraTabbedMdiManager1.Appearance = appearance23;
             this.ultraTabbedMdiManager1.MaximizedTabGroupDisplayStyle = Infragistics.Win.UltraWinTabbedMdi.MaximizedMdiTabGroupDisplayStyle.ShowMaximizedGroupOnly;
             this.ultraTabbedMdiManager1.MdiParent = this;
             this.ultraTabbedMdiManager1.SplitterBorderStyle = Infragistics.Win.UIElementBorderStyle.None;
+            this.ultraTabbedMdiManager1.TabGroupSettings.CloseButtonLocation = Infragistics.Win.UltraWinTabs.TabCloseButtonLocation.Tab;
             this.ultraTabbedMdiManager1.TabGroupSettings.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.BottomLeft;
             this.ultraTabbedMdiManager1.TabGroupSettings.TabStyle = Infragistics.Win.UltraWinTabs.TabStyle.Excel;
+            this.ultraTabbedMdiManager1.TabSettings.TabCloseAction = Infragistics.Win.UltraWinTabbedMdi.MdiTabCloseAction.Close;
             // 
             // menuLateralSplitter
             // 
-            appearance1.BackColor = System.Drawing.Color.White;
-            appearance1.BackColor2 = System.Drawing.Color.White;
-            this.menuLateralSplitter.Appearance = appearance1;
+            appearance3.BackColor = System.Drawing.Color.White;
+            appearance3.BackColor2 = System.Drawing.Color.White;
+            this.menuLateralSplitter.Appearance = appearance3;
             this.menuLateralSplitter.BackColor = System.Drawing.Color.White;
             this.menuLateralSplitter.BorderStyle = Infragistics.Win.UIElementBorderStyle.None;
             this.menuLateralSplitter.CollapseUIType = Infragistics.Win.Misc.CollapseUIType.None;
@@ -415,12 +439,136 @@
             this.menuLateralSplitter.Size = new System.Drawing.Size(4, 459);
             this.menuLateralSplitter.TabIndex = 8;
             // 
+            // panelError
+            // 
+            // 
+            // panelError.ClientArea
+            // 
+            this.panelError.ClientArea.Controls.Add(this.richTextBox1);
+            this.panelError.ClientArea.Controls.Add(this.errorTituloPanel);
+            this.panelError.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelError.Location = new System.Drawing.Point(268, 396);
+            this.panelError.Name = "panelError";
+            this.panelError.Size = new System.Drawing.Size(512, 148);
+            this.panelError.TabIndex = 14;
+            // 
+            // errorSplitter
+            // 
+            appearance1.BackColor = System.Drawing.Color.White;
+            appearance1.BackColor2 = System.Drawing.Color.White;
+            appearance1.BorderColor = System.Drawing.Color.White;
+            appearance1.BorderColor2 = System.Drawing.Color.White;
+            appearance1.BorderColor3DBase = System.Drawing.Color.White;
+            this.errorSplitter.Appearance = appearance1;
+            this.errorSplitter.BackColor = System.Drawing.Color.White;
+            this.errorSplitter.CollapseUIType = Infragistics.Win.Misc.CollapseUIType.None;
+            this.errorSplitter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.errorSplitter.Location = new System.Drawing.Point(268, 392);
+            this.errorSplitter.Name = "errorSplitter";
+            this.errorSplitter.RestoreExtent = 134;
+            this.errorSplitter.Size = new System.Drawing.Size(512, 4);
+            this.errorSplitter.TabIndex = 15;
+            // 
+            // errorTituloPanel
+            // 
+            appearance2.BackColor = System.Drawing.Color.White;
+            appearance2.BackColor2 = System.Drawing.Color.White;
+            this.errorTituloPanel.Appearance = appearance2;
+            // 
+            // errorTituloPanel.ClientArea
+            // 
+            this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox3);
+            this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox2);
+            this.errorTituloPanel.ClientArea.Controls.Add(this.errorPanelCerrarPicture);
+            this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox1);
+            this.errorTituloPanel.ClientArea.Controls.Add(this.label2);
+            this.errorTituloPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.errorTituloPanel.Location = new System.Drawing.Point(0, 0);
+            this.errorTituloPanel.Name = "errorTituloPanel";
+            this.errorTituloPanel.Size = new System.Drawing.Size(512, 29);
+            this.errorTituloPanel.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Location = new System.Drawing.Point(105, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(128, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Bitácora de eventos";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 29);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(512, 119);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(58, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // errorPanelCerrarPicture
+            // 
+            this.errorPanelCerrarPicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.errorPanelCerrarPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.errorPanelCerrarPicture.Image = ((System.Drawing.Image)(resources.GetObject("errorPanelCerrarPicture.Image")));
+            this.errorPanelCerrarPicture.Location = new System.Drawing.Point(483, 0);
+            this.errorPanelCerrarPicture.Name = "errorPanelCerrarPicture";
+            this.errorPanelCerrarPicture.Size = new System.Drawing.Size(29, 29);
+            this.errorPanelCerrarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.errorPanelCerrarPicture.TabIndex = 3;
+            this.errorPanelCerrarPicture.TabStop = false;
+            this.errorPanelCerrarPicture.Click += new System.EventHandler(this.errorPanelCerrarPicture_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 548);
+            this.Controls.Add(this.errorSplitter);
+            this.Controls.Add(this.panelError);
             this.Controls.Add(this.menuLateralSplitter);
             this.Controls.Add(this.ultraPanel1);
             this.Controls.Add(this.menuLateralPanel);
@@ -450,6 +598,15 @@
             this.ultraPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).EndInit();
+            this.panelError.ClientArea.ResumeLayout(false);
+            this.panelError.ResumeLayout(false);
+            this.errorTituloPanel.ClientArea.ResumeLayout(false);
+            this.errorTituloPanel.ClientArea.PerformLayout();
+            this.errorTituloPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,6 +632,15 @@
         private System.Windows.Forms.Panel panel4;
         private Infragistics.Win.UltraWinEditors.UltraTextEditor menuLateralFiltroTextBox;
         private Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar menuLateralBar;
+        private Infragistics.Win.Misc.UltraPanel panelError;
+        private Infragistics.Win.Misc.UltraSplitter errorSplitter;
+        private Infragistics.Win.Misc.UltraPanel errorTituloPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox errorPanelCerrarPicture;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

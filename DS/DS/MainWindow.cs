@@ -12,8 +12,17 @@ using DS.Logica.Seguridad;
 
 namespace DS
 {
+
+
+
     public partial class MainWindow : Form
     {
+        private enum EstadoPanelError
+        {
+            Abierto = 0,
+            Cerrado = 1
+
+        }
 
         string CODIGO_USUARIO = "EHITEL";
         string CODIGO_MODULO = "DS";
@@ -142,6 +151,12 @@ namespace DS
         private void menuLateralBar_ActiveItemChanged(object sender, Infragistics.Win.UltraWinExplorerBar.ItemEventArgs e)
         {
             e.Item.Group.Active = true;
+
+            var form = (Form)System.Reflection.Assembly.GetExecutingAssembly().CreateInstance("DS." + e.Item.Tag.ToString());
+
+            form.MdiParent = this;
+            form.Show();
+
         }
 
         private void menuLateralBar_GroupExpanded(object sender, Infragistics.Win.UltraWinExplorerBar.GroupEventArgs e)
@@ -160,6 +175,27 @@ namespace DS
             configurarMenuLateral(menuLateralFiltroTextBox.Text);
         }
 
+        void showErrorPanel(EstadoPanelError Estado)
+        {
+            switch (Estado)
+            {
+                case EstadoPanelError.Abierto:
+                    panelError.Visible = true;
+                    errorSplitter.Visible = true;
+                    break;
+                case EstadoPanelError.Cerrado:
+                    panelError.Visible = false;
+                    errorSplitter.Visible = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void errorPanelCerrarPicture_Click(object sender, EventArgs e)
+        {
+            showErrorPanel(EstadoPanelError.Cerrado);
+        }
 
 
     }
