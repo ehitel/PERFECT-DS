@@ -28,11 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            this.ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
+            this.ultraPanel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // ultraPanel1
+            // 
+            appearance2.BackColor = System.Drawing.Color.DimGray;
+            this.ultraPanel1.Appearance = appearance2;
+            this.ultraPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ultraPanel1.Location = new System.Drawing.Point(0, 0);
+            this.ultraPanel1.Name = "ultraPanel1";
+            this.ultraPanel1.Size = new System.Drawing.Size(478, 66);
+            this.ultraPanel1.TabIndex = 0;
+            // 
+            // maestroPresentaciones
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "maestroPresentaciones";
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(478, 390);
+            this.Controls.Add(this.ultraPanel1);
+            this.Name = "maestroPresentaciones";
+            this.Text = "Presentaciones (empaques)";
+            this.ultraPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Infragistics.Win.Misc.UltraPanel ultraPanel1;
     }
 }
