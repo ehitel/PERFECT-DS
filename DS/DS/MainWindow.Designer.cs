@@ -53,8 +53,8 @@
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.ultraFormManager1 = new Infragistics.Win.UltraWinForm.UltraFormManager(this.components);
             this._MainWindow_UltraFormManager_Dock_Area_Left = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
@@ -67,23 +67,23 @@
             this.menuLateralFiltroTextBox = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ultraPanel3 = new Infragistics.Win.Misc.UltraPanel();
-            this.menuLateralDisableButton = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
-            this.menuLateralEnableButton = new System.Windows.Forms.PictureBox();
             this.ultraTabbedMdiManager1 = new Infragistics.Win.UltraWinTabbedMdi.UltraTabbedMdiManager(this.components);
             this.menuLateralSplitter = new Infragistics.Win.Misc.UltraSplitter();
             this.panelError = new Infragistics.Win.Misc.UltraPanel();
-            this.errorSplitter = new Infragistics.Win.Misc.UltraSplitter();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.errorTituloPanel = new Infragistics.Win.Misc.UltraPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.errorPanelCerrarPicture = new System.Windows.Forms.PictureBox();
+            this.errorSplitter = new Infragistics.Win.Misc.UltraSplitter();
+            this.extrarMensajeButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.errorPanelCerrarPicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuLateralEnableButton = new System.Windows.Forms.PictureBox();
+            this.menuLateralDisableButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ultraFormManager1)).BeginInit();
             this.menuLateralPanel.ClientArea.SuspendLayout();
             this.menuLateralPanel.SuspendLayout();
@@ -92,19 +92,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.menuLateralFiltroTextBox)).BeginInit();
             this.ultraPanel3.ClientArea.SuspendLayout();
             this.ultraPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuLateralDisableButton)).BeginInit();
             this.ultraPanel1.ClientArea.SuspendLayout();
             this.ultraPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).BeginInit();
             this.panelError.ClientArea.SuspendLayout();
             this.panelError.SuspendLayout();
             this.errorTituloPanel.ClientArea.SuspendLayout();
             this.errorTituloPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.extrarMensajeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuLateralDisableButton)).BeginInit();
             this.SuspendLayout();
             // 
             // ultraFormManager1
@@ -148,9 +148,9 @@
             this._MainWindow_UltraFormManager_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText;
             this._MainWindow_UltraFormManager_Dock_Area_Left.FormManager = this.ultraFormManager1;
             this._MainWindow_UltraFormManager_Dock_Area_Left.InitialResizeAreaExtent = 4;
-            this._MainWindow_UltraFormManager_Dock_Area_Left.Location = new System.Drawing.Point(0, 28);
+            this._MainWindow_UltraFormManager_Dock_Area_Left.Location = new System.Drawing.Point(0, 31);
             this._MainWindow_UltraFormManager_Dock_Area_Left.Name = "_MainWindow_UltraFormManager_Dock_Area_Left";
-            this._MainWindow_UltraFormManager_Dock_Area_Left.Size = new System.Drawing.Size(4, 516);
+            this._MainWindow_UltraFormManager_Dock_Area_Left.Size = new System.Drawing.Size(4, 513);
             this._MainWindow_UltraFormManager_Dock_Area_Left.UseAppStyling = false;
             // 
             // _MainWindow_UltraFormManager_Dock_Area_Right
@@ -161,9 +161,9 @@
             this._MainWindow_UltraFormManager_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText;
             this._MainWindow_UltraFormManager_Dock_Area_Right.FormManager = this.ultraFormManager1;
             this._MainWindow_UltraFormManager_Dock_Area_Right.InitialResizeAreaExtent = 4;
-            this._MainWindow_UltraFormManager_Dock_Area_Right.Location = new System.Drawing.Point(780, 28);
+            this._MainWindow_UltraFormManager_Dock_Area_Right.Location = new System.Drawing.Point(780, 31);
             this._MainWindow_UltraFormManager_Dock_Area_Right.Name = "_MainWindow_UltraFormManager_Dock_Area_Right";
-            this._MainWindow_UltraFormManager_Dock_Area_Right.Size = new System.Drawing.Size(4, 516);
+            this._MainWindow_UltraFormManager_Dock_Area_Right.Size = new System.Drawing.Size(4, 513);
             this._MainWindow_UltraFormManager_Dock_Area_Right.UseAppStyling = false;
             // 
             // _MainWindow_UltraFormManager_Dock_Area_Top
@@ -175,7 +175,7 @@
             this._MainWindow_UltraFormManager_Dock_Area_Top.FormManager = this.ultraFormManager1;
             this._MainWindow_UltraFormManager_Dock_Area_Top.Location = new System.Drawing.Point(0, 0);
             this._MainWindow_UltraFormManager_Dock_Area_Top.Name = "_MainWindow_UltraFormManager_Dock_Area_Top";
-            this._MainWindow_UltraFormManager_Dock_Area_Top.Size = new System.Drawing.Size(784, 28);
+            this._MainWindow_UltraFormManager_Dock_Area_Top.Size = new System.Drawing.Size(784, 31);
             this._MainWindow_UltraFormManager_Dock_Area_Top.UseAppStyling = false;
             // 
             // _MainWindow_UltraFormManager_Dock_Area_Bottom
@@ -209,9 +209,9 @@
             this.menuLateralPanel.ClientArea.Controls.Add(this.panel1);
             this.menuLateralPanel.ClientArea.Controls.Add(this.ultraPanel3);
             this.menuLateralPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuLateralPanel.Location = new System.Drawing.Point(4, 28);
+            this.menuLateralPanel.Location = new System.Drawing.Point(4, 31);
             this.menuLateralPanel.Name = "menuLateralPanel";
-            this.menuLateralPanel.Size = new System.Drawing.Size(260, 516);
+            this.menuLateralPanel.Size = new System.Drawing.Size(260, 513);
             this.menuLateralPanel.TabIndex = 6;
             // 
             // menuLateralBar
@@ -259,7 +259,7 @@
             this.menuLateralBar.Name = "menuLateralBar";
             scrollBarLook1.ViewStyle = Infragistics.Win.UltraWinScrollBar.ScrollBarViewStyle.ScenicRibbon;
             this.menuLateralBar.ScrollBarLook = scrollBarLook1;
-            this.menuLateralBar.Size = new System.Drawing.Size(259, 436);
+            this.menuLateralBar.Size = new System.Drawing.Size(259, 433);
             this.menuLateralBar.Style = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarStyle.VisualStudio2005Toolbox;
             this.menuLateralBar.TabIndex = 3;
             this.menuLateralBar.UseOsThemes = Infragistics.Win.DefaultableBoolean.False;
@@ -319,7 +319,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(259, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 476);
+            this.panel1.Size = new System.Drawing.Size(1, 473);
             this.panel1.TabIndex = 1;
             // 
             // ultraPanel3
@@ -336,19 +336,6 @@
             this.ultraPanel3.Name = "ultraPanel3";
             this.ultraPanel3.Size = new System.Drawing.Size(260, 40);
             this.ultraPanel3.TabIndex = 0;
-            // 
-            // menuLateralDisableButton
-            // 
-            this.menuLateralDisableButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menuLateralDisableButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuLateralDisableButton.Image = ((System.Drawing.Image)(resources.GetObject("menuLateralDisableButton.Image")));
-            this.menuLateralDisableButton.Location = new System.Drawing.Point(230, 12);
-            this.menuLateralDisableButton.Name = "menuLateralDisableButton";
-            this.menuLateralDisableButton.Size = new System.Drawing.Size(24, 24);
-            this.menuLateralDisableButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.menuLateralDisableButton.TabIndex = 0;
-            this.menuLateralDisableButton.TabStop = false;
-            this.menuLateralDisableButton.Click += new System.EventHandler(this.menuLateralDisableButton_Click);
             // 
             // label1
             // 
@@ -393,23 +380,10 @@
             // 
             this.ultraPanel1.ClientArea.Controls.Add(this.menuLateralEnableButton);
             this.ultraPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ultraPanel1.Location = new System.Drawing.Point(264, 28);
+            this.ultraPanel1.Location = new System.Drawing.Point(264, 31);
             this.ultraPanel1.Name = "ultraPanel1";
             this.ultraPanel1.Size = new System.Drawing.Size(516, 57);
             this.ultraPanel1.TabIndex = 7;
-            // 
-            // menuLateralEnableButton
-            // 
-            this.menuLateralEnableButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuLateralEnableButton.Image = ((System.Drawing.Image)(resources.GetObject("menuLateralEnableButton.Image")));
-            this.menuLateralEnableButton.Location = new System.Drawing.Point(11, 12);
-            this.menuLateralEnableButton.Name = "menuLateralEnableButton";
-            this.menuLateralEnableButton.Size = new System.Drawing.Size(24, 24);
-            this.menuLateralEnableButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.menuLateralEnableButton.TabIndex = 1;
-            this.menuLateralEnableButton.TabStop = false;
-            this.menuLateralEnableButton.Visible = false;
-            this.menuLateralEnableButton.Click += new System.EventHandler(this.menuLateralEnableButton_Click);
             // 
             // ultraTabbedMdiManager1
             // 
@@ -432,11 +406,11 @@
             this.menuLateralSplitter.BackColor = System.Drawing.Color.White;
             this.menuLateralSplitter.BorderStyle = Infragistics.Win.UIElementBorderStyle.None;
             this.menuLateralSplitter.CollapseUIType = Infragistics.Win.Misc.CollapseUIType.None;
-            this.menuLateralSplitter.Location = new System.Drawing.Point(264, 85);
+            this.menuLateralSplitter.Location = new System.Drawing.Point(264, 88);
             this.menuLateralSplitter.MaximumSize = new System.Drawing.Size(230, 0);
             this.menuLateralSplitter.Name = "menuLateralSplitter";
             this.menuLateralSplitter.RestoreExtent = 0;
-            this.menuLateralSplitter.Size = new System.Drawing.Size(4, 459);
+            this.menuLateralSplitter.Size = new System.Drawing.Size(4, 456);
             this.menuLateralSplitter.TabIndex = 8;
             // 
             // panelError
@@ -444,40 +418,35 @@
             // 
             // panelError.ClientArea
             // 
-            this.panelError.ClientArea.Controls.Add(this.richTextBox1);
+            this.panelError.ClientArea.Controls.Add(this.webBrowser1);
             this.panelError.ClientArea.Controls.Add(this.errorTituloPanel);
             this.panelError.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelError.Location = new System.Drawing.Point(268, 396);
+            this.panelError.Location = new System.Drawing.Point(268, 383);
             this.panelError.Name = "panelError";
-            this.panelError.Size = new System.Drawing.Size(512, 148);
+            this.panelError.Size = new System.Drawing.Size(512, 161);
             this.panelError.TabIndex = 14;
             // 
-            // errorSplitter
+            // webBrowser1
             // 
-            appearance1.BackColor = System.Drawing.Color.White;
-            appearance1.BackColor2 = System.Drawing.Color.White;
-            appearance1.BorderColor = System.Drawing.Color.White;
-            appearance1.BorderColor2 = System.Drawing.Color.White;
-            appearance1.BorderColor3DBase = System.Drawing.Color.White;
-            this.errorSplitter.Appearance = appearance1;
-            this.errorSplitter.BackColor = System.Drawing.Color.White;
-            this.errorSplitter.CollapseUIType = Infragistics.Win.Misc.CollapseUIType.None;
-            this.errorSplitter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.errorSplitter.Location = new System.Drawing.Point(268, 392);
-            this.errorSplitter.Name = "errorSplitter";
-            this.errorSplitter.RestoreExtent = 134;
-            this.errorSplitter.Size = new System.Drawing.Size(512, 4);
-            this.errorSplitter.TabIndex = 15;
+            this.webBrowser1.AllowNavigation = false;
+            this.webBrowser1.AllowWebBrowserDrop = false;
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 29);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(512, 132);
+            this.webBrowser1.TabIndex = 1;
             // 
             // errorTituloPanel
             // 
-            appearance2.BackColor = System.Drawing.Color.White;
+            appearance2.BackColor = System.Drawing.Color.LightYellow;
             appearance2.BackColor2 = System.Drawing.Color.White;
             this.errorTituloPanel.Appearance = appearance2;
             // 
             // errorTituloPanel.ClientArea
             // 
-            this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox3);
+            this.errorTituloPanel.ClientArea.Controls.Add(this.extrarMensajeButton);
             this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox2);
             this.errorTituloPanel.ClientArea.Controls.Add(this.errorPanelCerrarPicture);
             this.errorTituloPanel.ClientArea.Controls.Add(this.pictureBox1);
@@ -493,48 +462,54 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(105, 8);
+            this.label2.Location = new System.Drawing.Point(96, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Bitácora de eventos";
             // 
-            // richTextBox1
+            // errorSplitter
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 29);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(512, 119);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            appearance1.BackColor = System.Drawing.Color.White;
+            appearance1.BackColor2 = System.Drawing.Color.DarkBlue;
+            appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.GlassTop20;
+            appearance1.BorderColor = System.Drawing.Color.White;
+            appearance1.BorderColor2 = System.Drawing.Color.White;
+            appearance1.BorderColor3DBase = System.Drawing.Color.White;
+            this.errorSplitter.Appearance = appearance1;
+            this.errorSplitter.BackColor = System.Drawing.Color.White;
+            this.errorSplitter.CollapseUIType = Infragistics.Win.Misc.CollapseUIType.None;
+            this.errorSplitter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.errorSplitter.Location = new System.Drawing.Point(268, 378);
+            this.errorSplitter.Name = "errorSplitter";
+            this.errorSplitter.RestoreExtent = 134;
+            this.errorSplitter.Size = new System.Drawing.Size(512, 5);
+            this.errorSplitter.TabIndex = 15;
             // 
-            // pictureBox1
+            // extrarMensajeButton
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.extrarMensajeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.extrarMensajeButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.extrarMensajeButton.Image = ((System.Drawing.Image)(resources.GetObject("extrarMensajeButton.Image")));
+            this.extrarMensajeButton.Location = new System.Drawing.Point(58, 0);
+            this.extrarMensajeButton.Name = "extrarMensajeButton";
+            this.extrarMensajeButton.Size = new System.Drawing.Size(29, 29);
+            this.extrarMensajeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.extrarMensajeButton.TabIndex = 2;
+            this.extrarMensajeButton.TabStop = false;
+            this.extrarMensajeButton.Click += new System.EventHandler(this.extrarMensajeButton_Click);
             // 
-            // pictureBox3
+            // pictureBox2
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(58, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // errorPanelCerrarPicture
             // 
@@ -549,17 +524,43 @@
             this.errorPanelCerrarPicture.TabStop = false;
             this.errorPanelCerrarPicture.Click += new System.EventHandler(this.errorPanelCerrarPicture_Click);
             // 
-            // pictureBox2
+            // pictureBox1
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(29, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // menuLateralEnableButton
+            // 
+            this.menuLateralEnableButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuLateralEnableButton.Image = ((System.Drawing.Image)(resources.GetObject("menuLateralEnableButton.Image")));
+            this.menuLateralEnableButton.Location = new System.Drawing.Point(11, 12);
+            this.menuLateralEnableButton.Name = "menuLateralEnableButton";
+            this.menuLateralEnableButton.Size = new System.Drawing.Size(24, 24);
+            this.menuLateralEnableButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.menuLateralEnableButton.TabIndex = 1;
+            this.menuLateralEnableButton.TabStop = false;
+            this.menuLateralEnableButton.Visible = false;
+            this.menuLateralEnableButton.Click += new System.EventHandler(this.menuLateralEnableButton_Click);
+            // 
+            // menuLateralDisableButton
+            // 
+            this.menuLateralDisableButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menuLateralDisableButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.menuLateralDisableButton.Image = ((System.Drawing.Image)(resources.GetObject("menuLateralDisableButton.Image")));
+            this.menuLateralDisableButton.Location = new System.Drawing.Point(230, 12);
+            this.menuLateralDisableButton.Name = "menuLateralDisableButton";
+            this.menuLateralDisableButton.Size = new System.Drawing.Size(24, 24);
+            this.menuLateralDisableButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.menuLateralDisableButton.TabIndex = 0;
+            this.menuLateralDisableButton.TabStop = false;
+            this.menuLateralDisableButton.Click += new System.EventHandler(this.menuLateralDisableButton_Click);
             // 
             // MainWindow
             // 
@@ -593,20 +594,20 @@
             this.ultraPanel3.ClientArea.ResumeLayout(false);
             this.ultraPanel3.ClientArea.PerformLayout();
             this.ultraPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuLateralDisableButton)).EndInit();
             this.ultraPanel1.ClientArea.ResumeLayout(false);
             this.ultraPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraTabbedMdiManager1)).EndInit();
             this.panelError.ClientArea.ResumeLayout(false);
             this.panelError.ResumeLayout(false);
             this.errorTituloPanel.ClientArea.ResumeLayout(false);
             this.errorTituloPanel.ClientArea.PerformLayout();
             this.errorTituloPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.extrarMensajeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorPanelCerrarPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuLateralEnableButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.menuLateralDisableButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,11 +637,11 @@
         private Infragistics.Win.Misc.UltraSplitter errorSplitter;
         private Infragistics.Win.Misc.UltraPanel errorTituloPanel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox extrarMensajeButton;
         private System.Windows.Forms.PictureBox errorPanelCerrarPicture;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

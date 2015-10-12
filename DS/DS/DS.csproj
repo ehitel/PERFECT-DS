@@ -57,6 +57,7 @@
     <Reference Include="Infragistics4.Win.Misc.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinListBar.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -83,11 +84,20 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="maestroPresentaciones.cs">
+    <Compile Include="Delegados.cs" />
+    <Compile Include="ErrorEstructura.cs" />
+    <Compile Include="ErrorGestor.cs" />
+    <Compile Include="ErrorMostrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="maestroPresentaciones.Designer.cs">
-      <DependentUpon>maestroPresentaciones.cs</DependentUpon>
+    <Compile Include="ErrorMostrar.Designer.cs">
+      <DependentUpon>ErrorMostrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaestroPresentaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroPresentaciones.Designer.cs">
+      <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -100,8 +110,11 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="maestroPresentaciones.resx">
-      <DependentUpon>maestroPresentaciones.cs</DependentUpon>
+    <EmbeddedResource Include="ErrorMostrar.resx">
+      <DependentUpon>ErrorMostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaestroPresentaciones.resx">
+      <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -33,6 +33,8 @@ namespace DS
 
             configurarMenuLateral(string.Empty);
 
+            showErrorPanel(EstadoPanelError.Cerrado);
+
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -150,13 +152,34 @@ namespace DS
 
         private void menuLateralBar_ActiveItemChanged(object sender, Infragistics.Win.UltraWinExplorerBar.ItemEventArgs e)
         {
-            e.Item.Group.Active = true;
+            try
+            {
+                e.Item.Group.Active = true;
 
-            var form = (Form)System.Reflection.Assembly.GetExecutingAssembly().CreateInstance("DS." + e.Item.Tag.ToString());
+                var form = (Form)System.Reflection.Assembly.GetExecutingAssembly().CreateInstance("DS." + e.Item.Tag.ToString());
 
-            form.MdiParent = this;
-            form.Show();
+                form.MdiParent = this;
+                form.Show();
+            }
+            catch (Exception ex)
+            {
 
+                MostrarError("Error en selección de menú", ex.Message, "Menú principal", ex.StackTrace,
+                    "Es probable que el programa invocado no exista, favor solicitar ayuda a soporte técnico." , ex);
+
+            }
+
+
+        }
+
+        private void MostrarError(string titulo, String mensaje, string seccion, string trazo, string comentario, Exception ex)
+        {
+
+            ErrorGestor err = new ErrorGestor();
+
+            webBrowser1.DocumentText = err.obtenerError(titulo, seccion, comentario, ex.Message, ex.StackTrace);
+
+            showErrorPanel(EstadoPanelError.Abierto);
         }
 
         private void menuLateralBar_GroupExpanded(object sender, Infragistics.Win.UltraWinExplorerBar.GroupEventArgs e)
@@ -196,6 +219,14 @@ namespace DS
         {
             showErrorPanel(EstadoPanelError.Cerrado);
         }
+
+        private void extrarMensajeButton_Click(object sender, EventArgs e)
+        {
+            ErrorMostrar errorVentana = new ErrorMostrar(webBrowser1.DocumentText);
+            errorVentana.WindowState = FormWindowState.Maximized;
+            errorVentana.Show(this);
+        }
+
 
 
     }

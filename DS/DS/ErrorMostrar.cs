@@ -10,14 +10,18 @@ using System.Windows.Forms;
 
 namespace DS
 {
-    public partial class MaestroPresentaciones : Form
+    public partial class ErrorMostrar : Form
     {
-
-        public event Delegados.ErrorGenerado ErrorGenerado;
-
-        public MaestroPresentaciones()
+        public ErrorMostrar()
         {
             InitializeComponent();
+        }
+
+        public ErrorMostrar(string Mensaje)
+        {
+            InitializeComponent();
+
+            webBrowser1.DocumentText = Mensaje;
         }
     }
 }
