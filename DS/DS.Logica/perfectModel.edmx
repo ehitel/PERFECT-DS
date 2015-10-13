@@ -5,6 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="PERFECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="PROG_PRESENTACION_CONSULTA_GENERAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_USUARIO" Type="varchar" Mode="In" />
           <Parameter Name="CODIGO_MODULO" Type="varchar" Mode="In" />
@@ -21,6 +22,7 @@
             <Parameter Name="CODIGO_MODULO" Mode="In" Type="String" />
             <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="PROG_PRESENTACION_CONSULTA_GENERAL" ReturnType="Collection(PERFECTModel.PRESENTACION_CONSULTA)" />
         </EntityContainer>
         <ComplexType Name="PERMISO_USUARIO_MODULO">
           <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
@@ -30,6 +32,10 @@
           <Property Type="String" Name="NOMBRE_FORMULARIO" Nullable="false" MaxLength="500" />
           <Property Type="String" Name="NOMBRE_IMAGEN" Nullable="false" MaxLength="500" />
           <Property Type="Int32" Name="POSICION" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PRESENTACION_CONSULTA">
+          <Property Type="String" Name="CODIGO_PRESENTACION" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NOMBRE_PRESENTACION" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -47,6 +53,14 @@
                 <ScalarProperty Name="NOMBRE_FORMULARIO" ColumnName="NOMBRE_FORMULARIO" />
                 <ScalarProperty Name="NOMBRE_IMAGEN" ColumnName="NOMBRE_IMAGEN" />
                 <ScalarProperty Name="POSICION" ColumnName="POSICION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_CONSULTA_GENERAL" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_CONSULTA_GENERAL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.PRESENTACION_CONSULTA">
+                <ScalarProperty Name="CODIGO_PRESENTACION" ColumnName="CODIGO_PRESENTACION" />
+                <ScalarProperty Name="NOMBRE_PRESENTACION" ColumnName="NOMBRE_PRESENTACION" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

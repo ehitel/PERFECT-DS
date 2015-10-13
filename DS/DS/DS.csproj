@@ -93,6 +93,7 @@
     <Compile Include="ErrorMostrar.Designer.cs">
       <DependentUpon>ErrorMostrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="IWindow.cs" />
     <Compile Include="MaestroPresentaciones.cs">
       <SubType>Form</SubType>
     </Compile>

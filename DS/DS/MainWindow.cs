@@ -158,6 +158,7 @@ namespace DS
 
                 var form = (Form)System.Reflection.Assembly.GetExecutingAssembly().CreateInstance("DS." + e.Item.Tag.ToString());
 
+                ((IWindow)form).ErrorGenerado += MainWindow_ErrorGenerado;
                 form.MdiParent = this;
                 form.Show();
             }
@@ -172,6 +173,12 @@ namespace DS
 
         }
 
+        void MainWindow_ErrorGenerado(object sender, ErrorEstructura e)
+        {
+            MostrarError(e);
+
+        }
+
         private void MostrarError(string titulo, String mensaje, string seccion, string trazo, string comentario, Exception ex)
         {
 
@@ -180,6 +187,18 @@ namespace DS
             webBrowser1.DocumentText = err.obtenerError(titulo, seccion, comentario, ex.Message, ex.StackTrace);
 
             showErrorPanel(EstadoPanelError.Abierto);
+        }
+
+
+        private void MostrarError(ErrorEstructura error)
+        {
+
+            ErrorGestor err = new ErrorGestor();
+
+            webBrowser1.DocumentText = err.obtenerError(error.Titulo, error.Seccion, error.Comentario, error.Mensaje, error.Trazo);
+
+            showErrorPanel(EstadoPanelError.Abierto);
+
         }
 
         private void menuLateralBar_GroupExpanded(object sender, Infragistics.Win.UltraWinExplorerBar.GroupEventArgs e)

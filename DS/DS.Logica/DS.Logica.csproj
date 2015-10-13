@@ -66,6 +66,10 @@
     <Compile Include="PERMISO_USUARIO_MODULO.cs">
       <DependentUpon>perfectModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PresentacionGestor.cs" />
+    <Compile Include="PRESENTACION_CONSULTA.cs">
+      <DependentUpon>perfectModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\Permisos.cs" />
   </ItemGroup>

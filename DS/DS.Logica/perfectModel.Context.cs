@@ -44,5 +44,10 @@ namespace DS.Logica
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PERMISO_USUARIO_MODULO>("SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO", cODIGO_USUARIOParameter, cODIGO_MODULOParameter, dESCRIPCIONParameter);
         }
+    
+        public virtual ObjectResult<PRESENTACION_CONSULTA> PROG_PRESENTACION_CONSULTA_GENERAL()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PRESENTACION_CONSULTA>("PROG_PRESENTACION_CONSULTA_GENERAL");
+        }
     }
 }
