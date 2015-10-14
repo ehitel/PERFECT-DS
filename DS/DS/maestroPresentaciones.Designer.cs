@@ -222,6 +222,9 @@
             appearance13.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
             appearance13.BorderColor = System.Drawing.SystemColors.Window;
             this.ultraGrid1.DisplayLayout.Override.GroupByRowAppearance = appearance13;
+            appearance14.BackColor = System.Drawing.Color.White;
+            appearance14.BackColor2 = System.Drawing.Color.Silver;
+            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.None;
             appearance14.TextHAlignAsString = "Left";
             this.ultraGrid1.DisplayLayout.Override.HeaderAppearance = appearance14;
             this.ultraGrid1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
