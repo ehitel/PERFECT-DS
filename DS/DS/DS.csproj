@@ -168,6 +168,7 @@
     <Content Include="Recursos\Imagenes\borrar16.png" />
     <Content Include="Recursos\Imagenes\buscar16.png" />
     <Content Include="Recursos\Imagenes\down_32.png" />
+    <Content Include="Recursos\Imagenes\edit_16.png" />
     <Content Include="Recursos\Imagenes\expand_20.png" />
     <Content Include="Recursos\Imagenes\expand_32.png" />
     <Content Include="Recursos\Imagenes\expand_single_32.png" />
