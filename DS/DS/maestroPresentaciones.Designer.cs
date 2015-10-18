@@ -169,7 +169,7 @@
             this._ClientArea_Toolbars_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this._ClientArea_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left;
             this._ClientArea_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._ClientArea_Toolbars_Dock_Area_Left.Location = new System.Drawing.Point(0, 65);
+            this._ClientArea_Toolbars_Dock_Area_Left.Location = new System.Drawing.Point(0, 40);
             this._ClientArea_Toolbars_Dock_Area_Left.Name = "_ClientArea_Toolbars_Dock_Area_Left";
             this._ClientArea_Toolbars_Dock_Area_Left.Size = new System.Drawing.Size(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Left.ToolbarsManager = this.ultraToolbarsManager1;
@@ -180,7 +180,7 @@
             this._ClientArea_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this._ClientArea_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right;
             this._ClientArea_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._ClientArea_Toolbars_Dock_Area_Right.Location = new System.Drawing.Point(710, 65);
+            this._ClientArea_Toolbars_Dock_Area_Right.Location = new System.Drawing.Point(710, 40);
             this._ClientArea_Toolbars_Dock_Area_Right.Name = "_ClientArea_Toolbars_Dock_Area_Right";
             this._ClientArea_Toolbars_Dock_Area_Right.Size = new System.Drawing.Size(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Right.ToolbarsManager = this.ultraToolbarsManager1;
@@ -204,7 +204,7 @@
             this._ClientArea_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText;
             this._ClientArea_Toolbars_Dock_Area_Top.Location = new System.Drawing.Point(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Top.Name = "_ClientArea_Toolbars_Dock_Area_Top";
-            this._ClientArea_Toolbars_Dock_Area_Top.Size = new System.Drawing.Size(710, 65);
+            this._ClientArea_Toolbars_Dock_Area_Top.Size = new System.Drawing.Size(710, 40);
             this._ClientArea_Toolbars_Dock_Area_Top.ToolbarsManager = this.ultraToolbarsManager1;
             // 
             // ultraGrid1

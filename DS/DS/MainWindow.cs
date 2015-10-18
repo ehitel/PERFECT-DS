@@ -147,6 +147,8 @@ namespace DS
                 menuLateralBar.Groups.ExpandAll();
 
 
+
+
         }
 
 
@@ -166,7 +168,7 @@ namespace DS
             {
 
                 MostrarError("Error en selección de menú", ex.Message, "Menú principal", ex.StackTrace,
-                    "Es probable que el programa invocado no exista, favor solicitar ayuda a soporte técnico." , ex);
+                    "Es probable que el programa invocado no exista, favor solicitar ayuda a soporte técnico.", ex);
 
             }
 
@@ -193,11 +195,19 @@ namespace DS
         private void MostrarError(ErrorEstructura error)
         {
 
-            ErrorGestor err = new ErrorGestor();
+            if (error.Tipo == TipoError.Error)
+            {
 
-            webBrowser1.DocumentText = err.obtenerError(error.Titulo, error.Seccion, error.Comentario, error.Mensaje, error.Trazo);
+                ErrorGestor err = new ErrorGestor();
 
-            showErrorPanel(EstadoPanelError.Abierto);
+                webBrowser1.DocumentText = err.obtenerError(error.Titulo, error.Seccion, error.Comentario, error.Mensaje, error.Trazo);
+
+                showErrorPanel(EstadoPanelError.Abierto);
+            }
+            else if (error.Tipo == TipoError.Confirmacion)
+            {
+                notificacionRapidaAlerta1.mostrarNotificacion(error.Mensaje);
+            }
 
         }
 

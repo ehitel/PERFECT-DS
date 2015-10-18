@@ -34,6 +34,7 @@ namespace DS
 
                 ErrorEstructura error = new ErrorEstructura
                 {
+                    Tipo= TipoError.Error,
                     Titulo = "Error cargando presentaciones",
                     Seccion = "Cargar datos",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",

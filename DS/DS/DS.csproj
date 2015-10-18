@@ -119,6 +119,12 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificacionRapidaAlerta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotificacionRapidaAlerta.Designer.cs">
+      <DependentUpon>NotificacionRapidaAlerta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidacionCampos.cs" />
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificacionRapidaAlerta.resx">
+      <DependentUpon>NotificacionRapidaAlerta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -189,6 +198,7 @@
     <Content Include="Recursos\Imagenes\expand_single_32.png" />
     <Content Include="Recursos\Imagenes\menu3232.png" />
     <Content Include="Recursos\Imagenes\next_32.png" />
+    <Content Include="Recursos\Imagenes\not_332.png" />
     <Content Include="Recursos\Imagenes\save_blue_32.png" />
     <None Include="Recursos\Imagenes\save_32.png" />
   </ItemGroup>

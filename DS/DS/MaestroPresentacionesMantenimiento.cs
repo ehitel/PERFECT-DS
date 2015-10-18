@@ -58,9 +58,10 @@ namespace DS
                     return;
                 }
 
-
-
-
+                
+                
+                ErrorGenerado(this, new ErrorEstructura { Tipo= TipoError.Confirmacion, Mensaje = "Registro guardado con éxito" });
+                
             }
             catch (Exception ex)
             {
