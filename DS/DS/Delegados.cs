@@ -11,5 +11,7 @@ namespace DS
 
         public delegate void ErrorGenerado(object sender, ErrorEstructura e);
 
+        public delegate void RegistroModificado(object sender, EventArgs e);
+
     }
 }

@@ -53,6 +53,8 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL" />
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Shared.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.Misc.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v12.1, Version=12.1.20121.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -71,6 +73,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,12 +99,19 @@
     <Compile Include="ErrorMostrar.Designer.cs">
       <DependentUpon>ErrorMostrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="IMantenimiento.cs" />
     <Compile Include="IWindow.cs" />
     <Compile Include="MaestroPresentaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaestroPresentaciones.Designer.cs">
       <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaestroPresentacionesMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroPresentacionesMantenimiento.Designer.cs">
+      <DependentUpon>MaestroPresentacionesMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -111,6 +121,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidacionCampos.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaestroPresentaciones.resx">
       <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaestroPresentacionesMantenimiento.resx">
+      <DependentUpon>MaestroPresentacionesMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -169,11 +183,14 @@
     <Content Include="Recursos\Imagenes\buscar16.png" />
     <Content Include="Recursos\Imagenes\down_32.png" />
     <Content Include="Recursos\Imagenes\edit_16.png" />
+    <Content Include="Recursos\Imagenes\exit_32.png" />
     <Content Include="Recursos\Imagenes\expand_20.png" />
     <Content Include="Recursos\Imagenes\expand_32.png" />
     <Content Include="Recursos\Imagenes\expand_single_32.png" />
     <Content Include="Recursos\Imagenes\menu3232.png" />
     <Content Include="Recursos\Imagenes\next_32.png" />
+    <Content Include="Recursos\Imagenes\save_blue_32.png" />
+    <None Include="Recursos\Imagenes\save_32.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

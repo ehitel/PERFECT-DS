@@ -15,7 +15,7 @@ namespace DS
     {
 
         public event Delegados.ErrorGenerado ErrorGenerado;
-       
+
         public MaestroPresentaciones()
         {
             InitializeComponent();
@@ -31,20 +31,55 @@ namespace DS
             }
             catch (Exception ex)
             {
-                if (ErrorGenerado != null)
+
+                ErrorEstructura error = new ErrorEstructura
                 {
-                    ErrorGenerado(this, new ErrorEstructura
-                    {
-                        Titulo = "Error cargando presentaciones",
-                        Seccion = "Cargar datos",
-                        Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
-                        Mensaje = ex.Message,
-                        Trazo = ex.StackTrace
-                    });
-                }
+                    Titulo = "Error cargando presentaciones",
+                    Seccion = "Cargar datos",
+                    Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
+                    Mensaje = ex.Message,
+                    Trazo = ex.StackTrace
+                };
+
+                mantenimiento_ErrorGenerado(this, error);
+
             }
         }
 
-       
+        private void ultraToolbarsManager1_ToolClick(object sender, Infragistics.Win.UltraWinToolbars.ToolClickEventArgs e)
+        {
+            switch (e.Tool.Key)
+            {
+                case "agregarRegistro":
+
+                    MaestroPresentacionesMantenimiento mantenimiento = new MaestroPresentacionesMantenimiento();
+                    mantenimiento.RegistroModificado += mantenimiento_RegistroModificado;
+                    mantenimiento.ErrorGenerado += mantenimiento_ErrorGenerado;
+                    mantenimiento.MdiParent = this.MdiParent;
+                    mantenimiento.Show();
+
+                    break;
+
+                case "Cerrar":
+                    this.Close();
+                   
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        void mantenimiento_ErrorGenerado(object sender, ErrorEstructura e)
+        {
+            ErrorGenerado(this, e);
+        }
+
+        void mantenimiento_RegistroModificado(object sender, EventArgs e)
+        {
+            cargarDatos();
+        }
+
+
     }
 }

@@ -1,66 +1,74 @@
-#region Using
-
-using System;
-using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.ComponentModel;
-using System.Collections.Generic;
-
-
-using Gizmox.WebGUI;
-using Gizmox.WebGUI.Forms;
-using Gizmox.WebGUI.Forms.Skins;
-using Gizmox.WebGUI.Common;
-using Gizmox.WebGUI.Forms.Design;
-using Gizmox.WebGUI.Common.Interfaces;
-using Gizmox.WebGUI.Common.Extensibility;
-
-
-#endregion
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DS
 {
-    /// <summary>
-    /// Summary description for MaestroPresentacionesMantenimiento
-    /// </summary>
-    [ToolboxItem(true)]
-    [ToolboxBitmapAttribute(typeof(MaestroPresentacionesMantenimiento), "DS.MaestroPresentacionesMantenimiento.bmp")]
-    [DesignTimeController("Gizmox.WebGUI.Forms.Design.PlaceHolderController, Gizmox.WebGUI.Forms.Design, Version=4.5.15701.0 , Culture=neutral, PublicKeyToken=dd2a1fd4d120c769")]
-    [ClientController("Gizmox.WebGUI.Client.Controllers.PlaceHolderController, Gizmox.WebGUI.Client, Version=4.5.15701.0 , Culture=neutral, PublicKeyToken=0fb8f99bd6cd7e23")]
-    [Serializable()]
-    [MetadataTag("DS.MaestroPresentacionesMantenimiento")]
-    [Skin(typeof(MaestroPresentacionesMantenimientoSkin))]
-    public partial class MaestroPresentacionesMantenimiento : Control
+    public partial class MaestroPresentacionesMantenimiento : Form, IWindow, IMantenimiento
     {
+        public event Delegados.ErrorGenerado ErrorGenerado;
+        public event Delegados.RegistroModificado RegistroModificado;
+
+
+        ValidacionCampos validacion;
+
         public MaestroPresentacionesMantenimiento()
         {
-
             InitializeComponent();
+
+            validacion = new ValidacionCampos();
+
+            validacion.agregarValidacion(codigoPresentacionTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(descripcionPresentacionTextBox, TipoCampos.Texto, string.Empty);
+
         }
 
-
-        protected override void RenderAttributes(IContext context, IAttributeWriter writer)
+        private void ultraToolbarsManager1_ToolClick(object sender, Infragistics.Win.UltraWinToolbars.ToolClickEventArgs e)
         {
-            base.RenderAttributes(context, writer);
-
-            writer.WriteAttributeString(WGAttributes.Text, Text);
-        }
-
-        public override string Text
-        {
-            get
+            switch (e.Tool.Key)
             {
-                return base.Text;
+
+                case "guardarRegistro":
+
+                    GuardarRegistros();
+
+                    break;
+                case "Cerrar":
+                    this.Close();
+
+                    break;
+                default:
+                    break;
             }
-            set
+        }
+
+        void GuardarRegistros()
+        {
+            try
             {
-                if (base.Text != value)
+
+                if (!validacion.formValido(this.errorProvider1))
                 {
-                    base.Text = value;
-                    this.Update();
+                    return;
                 }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
+
+
     }
 }
