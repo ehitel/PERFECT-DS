@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DS.Logica;
 
 namespace DS
 {
@@ -58,16 +59,58 @@ namespace DS
                     return;
                 }
 
-                
-                
-                ErrorGenerado(this, new ErrorEstructura { Tipo= TipoError.Confirmacion, Mensaje = "Registro guardado con éxito" });
+
+
+                PRESENTACION presentacion = new PRESENTACION();
+
+                presentacion.CODIGO_PRESENTACION = codigoPresentacionTextBox.Text;
+                presentacion.NOMBRE_PRESENTACION = descripcionPresentacionTextBox.Text;
+
+                ResultadoTransaccion res = new PresentacionGestor().GuardarRegistro(presentacion);
+
+
+                if (res.Resultado == TipoResultado.Error)
+                {
+                    ErrorEstructura error = new ErrorEstructura
+                    {
+                        Tipo = TipoError.Error,
+                        Titulo = "Error guardando presentaciones",
+                        Seccion = "Guardar registros",
+                        Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
+                        Mensaje = res.Mensaje
+                    };
+
+                    MostrarError(error);
+
+                }
+                else
+                {
+                    RegistroModificado(this, EventArgs.Empty);
+                    ErrorGenerado(this, new ErrorEstructura { Tipo = TipoError.Confirmacion, Mensaje = res.Mensaje });                    
+                }
+                  
+
                 
             }
             catch (Exception ex)
             {
+                ErrorEstructura error = new ErrorEstructura
+                {
+                    Tipo = TipoError.Error,
+                    Titulo = "Error cargando presentaciones",
+                    Seccion = "Cargar datos",
+                    Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
+                    Mensaje = ex.Message,
+                    Trazo = ex.StackTrace
+                };
 
-                throw;
             }
+        }
+
+
+        void MostrarError(ErrorEstructura error)
+        {                       
+            ErrorGenerado(this, error);
         }
 
 

@@ -4,14 +4,29 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PERFECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PERFECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PRESENTACION">
+          <Key>
+            <PropertyRef Name="CODIGO_PRESENTACION" />
+          </Key>
+          <Property Name="CODIGO_PRESENTACION" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NOMBRE_PRESENTACION" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="PROG_PRESENTACION_ACTUALIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_PRESENTACION" Type="varchar" Mode="In" />
+          <Parameter Name="NOMBRE_PRESENTACION" Type="varchar" Mode="In" />
+          <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
+          <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
+        </Function>
         <Function Name="PROG_PRESENTACION_CONSULTA_GENERAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_USUARIO" Type="varchar" Mode="In" />
           <Parameter Name="CODIGO_MODULO" Type="varchar" Mode="In" />
           <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
         </Function>
-        <EntityContainer Name="PERFECTModelStoreContainer" />
+        <EntityContainer Name="PERFECTModelStoreContainer">
+          <EntitySet Name="PRESENTACION" EntityType="Self.PRESENTACION" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -23,6 +38,13 @@
             <Parameter Name="DESCRIPCION" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="PROG_PRESENTACION_CONSULTA_GENERAL" ReturnType="Collection(PERFECTModel.PRESENTACION_CONSULTA)" />
+          <EntitySet Name="PRESENTACION" EntityType="PERFECTModel.PRESENTACION" />
+          <FunctionImport Name="PROG_PRESENTACION_ACTUALIZA">
+            <Parameter Name="CODIGO_PRESENTACION" Mode="In" Type="String" />
+            <Parameter Name="NOMBRE_PRESENTACION" Mode="In" Type="String" />
+            <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
+            <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PERMISO_USUARIO_MODULO">
           <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
@@ -37,6 +59,13 @@
           <Property Type="String" Name="CODIGO_PRESENTACION" Nullable="false" MaxLength="10" />
           <Property Type="String" Name="NOMBRE_PRESENTACION" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="PRESENTACION">
+          <Key>
+            <PropertyRef Name="CODIGO_PRESENTACION" />
+          </Key>
+          <Property Name="CODIGO_PRESENTACION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_PRESENTACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -64,6 +93,15 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="PRESENTACION">
+            <EntityTypeMapping TypeName="PERFECTModel.PRESENTACION">
+              <MappingFragment StoreEntitySet="PRESENTACION">
+                <ScalarProperty Name="NOMBRE_PRESENTACION" ColumnName="NOMBRE_PRESENTACION" />
+                <ScalarProperty Name="CODIGO_PRESENTACION" ColumnName="CODIGO_PRESENTACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_ACTUALIZA" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_ACTUALIZA" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
