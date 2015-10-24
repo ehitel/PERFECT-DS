@@ -48,6 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticuloCategoriaGestor.cs" />
+    <Compile Include="ARTICULO_CATEGORIA.cs">
+      <DependentUpon>perfectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CATEGORIA_CONSULTA.cs">
+      <DependentUpon>perfectModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="perfectModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +78,9 @@
     </Compile>
     <Compile Include="PresentacionGestor.cs" />
     <Compile Include="PRESENTACION_CONSULTA.cs">
+      <DependentUpon>perfectModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO_Result.cs">
       <DependentUpon>perfectModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

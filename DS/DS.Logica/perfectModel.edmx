@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="PERFECTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ARTICULO_CATEGORIA">
+          <Key>
+            <PropertyRef Name="CODIGO_CATEGORIA" />
+          </Key>
+          <Property Name="CODIGO_CATEGORIA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="NOMBRE_CATEGORIA" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityType Name="PRESENTACION">
           <Key>
             <PropertyRef Name="CODIGO_PRESENTACION" />
@@ -12,6 +19,21 @@
           <Property Name="CODIGO_PRESENTACION" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NOMBRE_PRESENTACION" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Function Name="PROG_ARTICULO_CATEGORIA_ACTUALIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_CATEGORIA" Type="varchar" Mode="In" />
+          <Parameter Name="NOMBRE_CATEGORIA" Type="varchar" Mode="In" />
+          <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
+          <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="PROG_ARTICULO_CATEGORIA_BORRAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_CATEGORIA" Type="varchar" Mode="In" />
+          <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
+          <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_CATEGORIA" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="PROG_PRESENTACION_ACTUALIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_PRESENTACION" Type="varchar" Mode="In" />
           <Parameter Name="NOMBRE_PRESENTACION" Type="varchar" Mode="In" />
@@ -33,6 +55,7 @@
           <Parameter Name="DESCRIPCION" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="PERFECTModelStoreContainer">
+          <EntitySet Name="ARTICULO_CATEGORIA" EntityType="Self.ARTICULO_CATEGORIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRESENTACION" EntityType="Self.PRESENTACION" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -61,6 +84,22 @@
             <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
             <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
           </FunctionImport>
+          <EntitySet Name="ARTICULO_CATEGORIA" EntityType="PERFECTModel.ARTICULO_CATEGORIA" />
+          <FunctionImport Name="PROG_ARTICULO_CATEGORIA_ACTUALIZA">
+            <Parameter Name="CODIGO_CATEGORIA" Mode="In" Type="String" />
+            <Parameter Name="NOMBRE_CATEGORIA" Mode="In" Type="String" />
+            <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
+            <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL" ReturnType="Collection(PERFECTModel.CATEGORIA_CONSULTA)" />
+          <FunctionImport Name="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO" ReturnType="Collection(PERFECTModel.CATEGORIA_CONSULTA)">
+          <Parameter Name="CODIGO_CATEGORIA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_ARTICULO_CATEGORIA_BORRAR">
+            <Parameter Name="CODIGO_CATEGORIA" Mode="In" Type="String" />
+            <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
+            <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PERMISO_USUARIO_MODULO">
           <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
@@ -82,6 +121,23 @@
           <Property Name="CODIGO_PRESENTACION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="NOMBRE_PRESENTACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="ARTICULO_CATEGORIA">
+          <Key>
+            <PropertyRef Name="CODIGO_CATEGORIA" />
+          </Key>
+          <Property Name="CODIGO_CATEGORIA" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_CATEGORIA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="CATEGORIA_CONSULTA">
+          <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMBRE_CATEGORIA" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="ARTICULOS_RELACION" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO_Result">
+          <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="NOMBRE_CATEGORIA" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="ARTICULOS_RELACION" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -127,6 +183,34 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_BORRAR" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_BORRAR" />
+          <EntitySetMapping Name="ARTICULO_CATEGORIA">
+            <EntityTypeMapping TypeName="PERFECTModel.ARTICULO_CATEGORIA">
+              <MappingFragment StoreEntitySet="ARTICULO_CATEGORIA">
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CATEGORIA_ACTUALIZA" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CATEGORIA_ACTUALIZA" />
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.CATEGORIA_CONSULTA">
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="ARTICULOS_RELACION" ColumnName="ARTICULOS_RELACION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.CATEGORIA_CONSULTA">
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="ARTICULOS_RELACION" ColumnName="ARTICULOS_RELACION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CATEGORIA_BORRAR" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CATEGORIA_BORRAR" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

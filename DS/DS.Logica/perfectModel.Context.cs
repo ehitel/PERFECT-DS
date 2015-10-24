@@ -28,6 +28,7 @@ namespace DS.Logica
         }
     
         public virtual DbSet<PRESENTACION> PRESENTACION { get; set; }
+        public virtual DbSet<ARTICULO_CATEGORIA> ARTICULO_CATEGORIA { get; set; }
     
         public virtual ObjectResult<PERMISO_USUARIO_MODULO> SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO(string cODIGO_USUARIO, string cODIGO_MODULO, string dESCRIPCION)
         {
@@ -80,6 +81,42 @@ namespace DS.Logica
                 new ObjectParameter("CODIGO_PRESENTACION", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_PRESENTACION_BORRAR", cODIGO_PRESENTACIONParameter, rESULTADO, mENSAJE);
+        }
+    
+        public virtual int PROG_ARTICULO_CATEGORIA_ACTUALIZA(string cODIGO_CATEGORIA, string nOMBRE_CATEGORIA, ObjectParameter rESULTADO, ObjectParameter mENSAJE)
+        {
+            var cODIGO_CATEGORIAParameter = cODIGO_CATEGORIA != null ?
+                new ObjectParameter("CODIGO_CATEGORIA", cODIGO_CATEGORIA) :
+                new ObjectParameter("CODIGO_CATEGORIA", typeof(string));
+    
+            var nOMBRE_CATEGORIAParameter = nOMBRE_CATEGORIA != null ?
+                new ObjectParameter("NOMBRE_CATEGORIA", nOMBRE_CATEGORIA) :
+                new ObjectParameter("NOMBRE_CATEGORIA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_CATEGORIA_ACTUALIZA", cODIGO_CATEGORIAParameter, nOMBRE_CATEGORIAParameter, rESULTADO, mENSAJE);
+        }
+    
+        public virtual ObjectResult<CATEGORIA_CONSULTA> PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CATEGORIA_CONSULTA>("PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL");
+        }
+    
+        public virtual ObjectResult<CATEGORIA_CONSULTA> PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO(string cODIGO_CATEGORIA)
+        {
+            var cODIGO_CATEGORIAParameter = cODIGO_CATEGORIA != null ?
+                new ObjectParameter("CODIGO_CATEGORIA", cODIGO_CATEGORIA) :
+                new ObjectParameter("CODIGO_CATEGORIA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CATEGORIA_CONSULTA>("PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO", cODIGO_CATEGORIAParameter);
+        }
+    
+        public virtual int PROG_ARTICULO_CATEGORIA_BORRAR(string cODIGO_CATEGORIA, ObjectParameter rESULTADO, ObjectParameter mENSAJE)
+        {
+            var cODIGO_CATEGORIAParameter = cODIGO_CATEGORIA != null ?
+                new ObjectParameter("CODIGO_CATEGORIA", cODIGO_CATEGORIA) :
+                new ObjectParameter("CODIGO_CATEGORIA", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_CATEGORIA_BORRAR", cODIGO_CATEGORIAParameter, rESULTADO, mENSAJE);
         }
     }
 }

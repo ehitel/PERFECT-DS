@@ -101,11 +101,23 @@
     </Compile>
     <Compile Include="IMantenimiento.cs" />
     <Compile Include="IWindow.cs" />
+    <Compile Include="MaestroCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroCategorias.Designer.cs">
+      <DependentUpon>MaestroCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaestroPresentaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaestroPresentaciones.Designer.cs">
       <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaestroCategoriasMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroCategoriasMantenimiento.Designer.cs">
+      <DependentUpon>MaestroCategoriasMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="MaestroPresentacionesMantenimiento.cs">
       <SubType>Form</SubType>
@@ -134,8 +146,14 @@
     <EmbeddedResource Include="ErrorMostrar.resx">
       <DependentUpon>ErrorMostrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaestroCategorias.resx">
+      <DependentUpon>MaestroCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaestroPresentaciones.resx">
       <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaestroCategoriasMantenimiento.resx">
+      <DependentUpon>MaestroCategoriasMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaestroPresentacionesMantenimiento.resx">
       <DependentUpon>MaestroPresentacionesMantenimiento.cs</DependentUpon>

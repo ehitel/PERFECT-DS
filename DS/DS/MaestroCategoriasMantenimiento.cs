@@ -11,7 +11,7 @@ using DS.Logica;
 
 namespace DS
 {
-    public partial class MaestroPresentacionesMantenimiento : Form, IWindow, IMantenimiento
+    public partial class MaestroCategoriasMantenimiento : Form, IWindow, IMantenimiento
     {
         public event Delegados.ErrorGenerado ErrorGenerado;
         public event Delegados.RegistroModificado RegistroModificado;
@@ -19,40 +19,37 @@ namespace DS
 
         ValidacionCampos validacion;
 
-        public MaestroPresentacionesMantenimiento(string codigoPresentacion)
+        public MaestroCategoriasMantenimiento(string codigoCategoria)
         {
-
             InitializeComponent();
 
             validacion = new ValidacionCampos();
 
-            validacion.agregarValidacion(codigoPresentacionTextBox, TipoCampos.Texto, string.Empty);
-            validacion.agregarValidacion(descripcionPresentacionTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(codigoCategoríaTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(descripcionCategoriaTextBox, TipoCampos.Texto, string.Empty);
 
-            codigoPresentacionTextBox.Text = codigoPresentacion;
-            codigoPresentacionTextBox.ReadOnly = true;
+            codigoCategoríaTextBox.Text = codigoCategoria;
+            codigoCategoríaTextBox.ReadOnly = true;
 
 
             CargarRegistro();
 
-
-            codigoPresentacionTextBox.TextChanged += codigoPresentacionTextBox_TextChanged;
+            codigoCategoríaTextBox.TextChanged+=codigoCategoríaTextBox_TextChanged;
+            
 
         }
 
-   
-
-        public MaestroPresentacionesMantenimiento()
+        public MaestroCategoriasMantenimiento()
         {
             InitializeComponent();
 
             validacion = new ValidacionCampos();
 
-            validacion.agregarValidacion(codigoPresentacionTextBox, TipoCampos.Texto, string.Empty);
-            validacion.agregarValidacion(descripcionPresentacionTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(codigoCategoríaTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(descripcionCategoriaTextBox, TipoCampos.Texto, string.Empty);
 
 
-            codigoPresentacionTextBox.TextChanged += codigoPresentacionTextBox_TextChanged;
+            codigoCategoríaTextBox.TextChanged += codigoCategoríaTextBox_TextChanged;
 
         }
 
@@ -87,12 +84,12 @@ namespace DS
 
 
 
-                PRESENTACION presentacion = new PRESENTACION();
+                ARTICULO_CATEGORIA categoria = new ARTICULO_CATEGORIA();
 
-                presentacion.CODIGO_PRESENTACION = codigoPresentacionTextBox.Text;
-                presentacion.NOMBRE_PRESENTACION = descripcionPresentacionTextBox.Text;
+                categoria.CODIGO_CATEGORIA = codigoCategoríaTextBox.Text;
+                categoria.NOMBRE_CATEGORIA = descripcionCategoriaTextBox.Text;
 
-                ResultadoTransaccion res = new PresentacionGestor().guardarRegistro(presentacion);
+                ResultadoTransaccion res = new ArticuloCategoriaGestor().guardarRegistro(categoria);
 
 
                 if (res.Resultado == TipoResultado.Error)
@@ -100,7 +97,7 @@ namespace DS
                     ErrorEstructura error = new ErrorEstructura
                     {
                         Tipo = TipoError.Error,
-                        Titulo = "Error guardando presentaciones",
+                        Titulo = "Error guardando categoría de artículo",
                         Seccion = "Guardar registros",
                         Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
                         Mensaje = res.Mensaje
@@ -126,7 +123,7 @@ namespace DS
                 ErrorEstructura error = new ErrorEstructura
                 {
                     Tipo = TipoError.Error,
-                    Titulo = "Error guardarn presentación",
+                    Titulo = "Error guardando categoría de artículo",
                     Seccion = "Gaurdar datos",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
                     Mensaje = ex.Message,
@@ -139,10 +136,10 @@ namespace DS
 
         void Limpiar()
         {
-            codigoPresentacionTextBox.ReadOnly = false;
-            codigoPresentacionTextBox.Clear();
-            descripcionPresentacionTextBox.Clear();
-            codigoPresentacionTextBox.Focus();
+            codigoCategoríaTextBox.ReadOnly = false;
+            codigoCategoríaTextBox.Clear();
+            descripcionCategoriaTextBox.Clear();
+            codigoCategoríaTextBox.Focus();
         }
 
 
@@ -150,12 +147,12 @@ namespace DS
         {
             try
             {
-                PRESENTACION_CONSULTA presentacion = new PresentacionGestor().obterPresentacion(codigoPresentacionTextBox.Text);
+                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoCategoríaTextBox.Text);
 
 
-                descripcionPresentacionTextBox.Text = presentacion.NOMBRE_PRESENTACION;
+                descripcionCategoriaTextBox.Text = categoria.NOMBRE_CATEGORIA;
 
-                descripcionPresentacionTextBox.Focus();
+                descripcionCategoriaTextBox.Focus();
 
 
             }
@@ -164,12 +161,14 @@ namespace DS
                 ErrorEstructura error = new ErrorEstructura
                 {
                     Tipo = TipoError.Error,
-                    Titulo = "Error cargando presentación",
-                    Seccion = "Cargar presentación",
+                    Titulo = "Error cargando categoría de artículo",
+                    Seccion = "Cargar artículo",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
                     Mensaje = ex.Message,
                     Trazo = ex.StackTrace
                 };
+
+                MostrarError(error);
             }
         }
 
@@ -178,13 +177,13 @@ namespace DS
             ErrorGenerado(this, error);
         }
 
-             void codigoPresentacionTextBox_TextChanged(object sender, EventArgs e)
+        private void codigoCategoríaTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                PRESENTACION_CONSULTA presentacion = new PresentacionGestor().obterPresentacion(codigoPresentacionTextBox.Text);
+                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoCategoríaTextBox.Text);
 
-                if (presentacion == null)
+                if (categoria == null)
                 {
                     return;
                 }
@@ -199,8 +198,8 @@ namespace DS
                 ErrorEstructura error = new ErrorEstructura
                 {
                     Tipo = TipoError.Error,
-                    Titulo = "Error cargando presentación de artículo",
-                    Seccion = "Cargar presentación",
+                    Titulo = "Error cargando categoría de artículo",
+                    Seccion = "Cargar artículo",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
                     Mensaje = ex.Message,
                     Trazo = ex.StackTrace
@@ -209,6 +208,7 @@ namespace DS
                 MostrarError(error);
             }
         }
+
         
 
     }

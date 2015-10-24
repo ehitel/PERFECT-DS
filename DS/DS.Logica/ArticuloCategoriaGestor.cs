@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DS.Logica
 {
-    public class PresentacionGestor
+    public class ArticuloCategoriaGestor
     {
 
-        public List<PRESENTACION_CONSULTA> obtenerCatalogoPresentaciones()
+        public List<CATEGORIA_CONSULTA> obtenerCatalogo()
         {
             try
             {
                 PERFECTEntities ent = new PERFECTEntities();
 
-                return ent.PROG_PRESENTACION_CONSULTA_GENERAL().ToList();
+                return ent.PROG_ARTICULO_CATEGORIA_CONSULTA_GENERAL().ToList();
 
             }
             catch (Exception ex)
@@ -24,7 +24,7 @@ namespace DS.Logica
             }
         }
 
-        public ResultadoTransaccion guardarRegistro(PRESENTACION presentacion)
+        public ResultadoTransaccion guardarRegistro(ARTICULO_CATEGORIA categoria)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace DS.Logica
                 System.Data.Entity.Core.Objects.ObjectParameter mensaje = new System.Data.Entity.Core.Objects.ObjectParameter("MENSAJE", typeof(string));
 
 
-                entidad.PROG_PRESENTACION_ACTUALIZA(presentacion.CODIGO_PRESENTACION, presentacion.NOMBRE_PRESENTACION, resultado, mensaje);
+                entidad.PROG_ARTICULO_CATEGORIA_ACTUALIZA(categoria.CODIGO_CATEGORIA, categoria.NOMBRE_CATEGORIA, resultado, mensaje);
 
 
                 return new ResultadoTransaccion
@@ -51,25 +51,23 @@ namespace DS.Logica
         }
 
 
-        public PRESENTACION_CONSULTA obterPresentacion(string codigoPresentacion)
+        public CATEGORIA_CONSULTA obterCategoria(string codigoCategoria)
         {
             try
             {
-
                 PERFECTEntities entidad = new PERFECTEntities();
 
-                List<PRESENTACION_CONSULTA> resultado = entidad.PROG_PRESENTACION_CONSULTA_UNICO(codigoPresentacion).ToList();
+                List<CATEGORIA_CONSULTA> result = entidad.PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO(codigoCategoria).ToList();
 
-                if (resultado.Count() > 0)
+                if (result.Count() > 0)
                 {
-                    return resultado.First();
+                    return result.First();
                 }
                 else
                 {
                     return null;
                 }
-
-
+                
 
             }
             catch (Exception ex)
@@ -78,7 +76,7 @@ namespace DS.Logica
             }
         }
 
-        public ResultadoTransaccion borrarPresentacion(string codigoPresentacion)
+        public ResultadoTransaccion borrarRegistro(string codigoCategoria)
         {
             try
             {
@@ -87,7 +85,7 @@ namespace DS.Logica
                 System.Data.Entity.Core.Objects.ObjectParameter mensaje = new System.Data.Entity.Core.Objects.ObjectParameter("MENSAJE", typeof(string));
 
 
-                entidad.PROG_PRESENTACION_BORRAR(codigoPresentacion, resultado, mensaje);
+                entidad.PROG_ARTICULO_CATEGORIA_BORRAR(codigoCategoria, resultado, mensaje);
 
 
                 return new ResultadoTransaccion
@@ -102,7 +100,6 @@ namespace DS.Logica
                 throw ex;
             }
         }
-
 
     }
 }
