@@ -322,6 +322,7 @@
             this.ultraGrid1.Size = new System.Drawing.Size(710, 472);
             this.ultraGrid1.TabIndex = 8;
             this.ultraGrid1.Text = "ultraGrid1";
+            this.ultraGrid1.ClickCellButton += new Infragistics.Win.UltraWinGrid.CellEventHandler(this.ultraGrid1_ClickCellButton);
             // 
             // MaestroPresentaciones
             // 

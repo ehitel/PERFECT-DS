@@ -63,5 +63,23 @@ namespace DS.Logica
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_PRESENTACION_ACTUALIZA", cODIGO_PRESENTACIONParameter, nOMBRE_PRESENTACIONParameter, rESULTADO, mENSAJE);
         }
+    
+        public virtual ObjectResult<PRESENTACION_CONSULTA> PROG_PRESENTACION_CONSULTA_UNICO(string cODIGO_PRESENTACION)
+        {
+            var cODIGO_PRESENTACIONParameter = cODIGO_PRESENTACION != null ?
+                new ObjectParameter("CODIGO_PRESENTACION", cODIGO_PRESENTACION) :
+                new ObjectParameter("CODIGO_PRESENTACION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PRESENTACION_CONSULTA>("PROG_PRESENTACION_CONSULTA_UNICO", cODIGO_PRESENTACIONParameter);
+        }
+    
+        public virtual int PROG_PRESENTACION_BORRAR(string cODIGO_PRESENTACION, ObjectParameter rESULTADO, ObjectParameter mENSAJE)
+        {
+            var cODIGO_PRESENTACIONParameter = cODIGO_PRESENTACION != null ?
+                new ObjectParameter("CODIGO_PRESENTACION", cODIGO_PRESENTACION) :
+                new ObjectParameter("CODIGO_PRESENTACION", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_PRESENTACION_BORRAR", cODIGO_PRESENTACIONParameter, rESULTADO, mENSAJE);
+        }
     }
 }

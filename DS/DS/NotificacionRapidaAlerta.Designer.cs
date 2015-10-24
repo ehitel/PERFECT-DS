@@ -37,7 +37,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 3000;
+            this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // notificacionRapidaLabel
@@ -45,7 +45,7 @@
             this.notificacionRapidaLabel.AutoSize = true;
             this.notificacionRapidaLabel.BackColor = System.Drawing.Color.Transparent;
             this.notificacionRapidaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notificacionRapidaLabel.ForeColor = System.Drawing.Color.White;
+            this.notificacionRapidaLabel.ForeColor = System.Drawing.Color.Gold;
             this.notificacionRapidaLabel.Location = new System.Drawing.Point(49, 11);
             this.notificacionRapidaLabel.Name = "notificacionRapidaLabel";
             this.notificacionRapidaLabel.Size = new System.Drawing.Size(17, 18);

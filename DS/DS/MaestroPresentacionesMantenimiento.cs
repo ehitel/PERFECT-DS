@@ -19,6 +19,24 @@ namespace DS
 
         ValidacionCampos validacion;
 
+        public MaestroPresentacionesMantenimiento(string codigoPresentacion)
+        {
+            InitializeComponent();
+
+            validacion = new ValidacionCampos();
+
+            validacion.agregarValidacion(codigoPresentacionTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(descripcionPresentacionTextBox, TipoCampos.Texto, string.Empty);
+
+            codigoPresentacionTextBox.Text = codigoPresentacion;
+            codigoPresentacionTextBox.ReadOnly = true;
+
+
+            CargarRegistro();
+            
+
+        }
+
         public MaestroPresentacionesMantenimiento()
         {
             InitializeComponent();
@@ -66,7 +84,7 @@ namespace DS
                 presentacion.CODIGO_PRESENTACION = codigoPresentacionTextBox.Text;
                 presentacion.NOMBRE_PRESENTACION = descripcionPresentacionTextBox.Text;
 
-                ResultadoTransaccion res = new PresentacionGestor().GuardarRegistro(presentacion);
+                ResultadoTransaccion res = new PresentacionGestor().guardarRegistro(presentacion);
 
 
                 if (res.Resultado == TipoResultado.Error)
@@ -82,13 +100,16 @@ namespace DS
 
                     MostrarError(error);
 
+                
                 }
                 else
                 {
                     RegistroModificado(this, EventArgs.Empty);
                     ErrorGenerado(this, new ErrorEstructura { Tipo = TipoError.Confirmacion, Mensaje = res.Mensaje });                    
                 }
-                  
+
+
+                Limpiar();
 
                 
             }
@@ -97,8 +118,8 @@ namespace DS
                 ErrorEstructura error = new ErrorEstructura
                 {
                     Tipo = TipoError.Error,
-                    Titulo = "Error cargando presentaciones",
-                    Seccion = "Cargar datos",
+                    Titulo = "Error guardarn presentación",
+                    Seccion = "Gaurdar datos",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
                     Mensaje = ex.Message,
                     Trazo = ex.StackTrace
@@ -108,11 +129,48 @@ namespace DS
         }
 
 
+        void Limpiar()
+        {
+            codigoPresentacionTextBox.ReadOnly = false;
+            codigoPresentacionTextBox.Clear();
+            descripcionPresentacionTextBox.Clear();
+            codigoPresentacionTextBox.Focus();
+        }
+
+
+        void CargarRegistro()
+        {
+            try
+            {
+                PRESENTACION_CONSULTA presentacion = new PresentacionGestor().obterPresentacion(codigoPresentacionTextBox.Text);
+
+
+                descripcionPresentacionTextBox.Text = presentacion.NOMBRE_PRESENTACION;
+
+                descripcionPresentacionTextBox.Focus();
+
+
+            }
+            catch (Exception ex)
+            {
+                ErrorEstructura error = new ErrorEstructura
+                {
+                    Tipo = TipoError.Error,
+                    Titulo = "Error cargando presentación",
+                    Seccion = "Cargar presentación",
+                    Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
+                    Mensaje = ex.Message,
+                    Trazo = ex.StackTrace
+                };
+            }
+        }
+
         void MostrarError(ErrorEstructura error)
         {                       
             ErrorGenerado(this, error);
         }
 
+        
 
     }
 }

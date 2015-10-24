@@ -18,7 +18,15 @@
           <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
           <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
         </Function>
+        <Function Name="PROG_PRESENTACION_BORRAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_PRESENTACION" Type="varchar" Mode="In" />
+          <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
+          <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
+        </Function>
         <Function Name="PROG_PRESENTACION_CONSULTA_GENERAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PROG_PRESENTACION_CONSULTA_UNICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_PRESENTACION" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_USUARIO" Type="varchar" Mode="In" />
           <Parameter Name="CODIGO_MODULO" Type="varchar" Mode="In" />
@@ -42,6 +50,14 @@
           <FunctionImport Name="PROG_PRESENTACION_ACTUALIZA">
             <Parameter Name="CODIGO_PRESENTACION" Mode="In" Type="String" />
             <Parameter Name="NOMBRE_PRESENTACION" Mode="In" Type="String" />
+            <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
+            <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_PRESENTACION_CONSULTA_UNICO" ReturnType="Collection(PERFECTModel.PRESENTACION_CONSULTA)">
+          <Parameter Name="CODIGO_PRESENTACION" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_PRESENTACION_BORRAR">
+            <Parameter Name="CODIGO_PRESENTACION" Mode="In" Type="String" />
             <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
             <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
           </FunctionImport>
@@ -102,6 +118,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_ACTUALIZA" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_ACTUALIZA" />
+          <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_CONSULTA_UNICO" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_CONSULTA_UNICO">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.PRESENTACION_CONSULTA">
+                <ScalarProperty Name="CODIGO_PRESENTACION" ColumnName="CODIGO_PRESENTACION" />
+                <ScalarProperty Name="NOMBRE_PRESENTACION" ColumnName="NOMBRE_PRESENTACION" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROG_PRESENTACION_BORRAR" FunctionName="PERFECTModel.Store.PROG_PRESENTACION_BORRAR" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

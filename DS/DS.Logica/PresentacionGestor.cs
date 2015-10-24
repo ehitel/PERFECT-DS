@@ -24,7 +24,7 @@ namespace DS.Logica
             }
         }
 
-        public ResultadoTransaccion GuardarRegistro(PRESENTACION presentacion)
+        public ResultadoTransaccion guardarRegistro(PRESENTACION presentacion)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace DS.Logica
                 return new ResultadoTransaccion
                 {
                     Resultado = resultado.Value.ToString().ToLower() == "ok" ? TipoResultado.Ok : TipoResultado.Error,
-                    Mensaje = mensaje.Value.ToString()                    
+                    Mensaje = mensaje.Value.ToString()
                 };
 
             }
@@ -48,6 +48,47 @@ namespace DS.Logica
                 throw ex;
             }
 
+        }
+
+
+        public PRESENTACION_CONSULTA obterPresentacion(string codigoPresentacion)
+        {
+            try
+            {
+                PERFECTEntities entidad = new PERFECTEntities();
+
+                return entidad.PROG_PRESENTACION_CONSULTA_UNICO(codigoPresentacion).First();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public ResultadoTransaccion borrarPresentacion(string codigoPresentacion)
+        {
+            try
+            {
+                PERFECTEntities entidad = new PERFECTEntities();
+                System.Data.Entity.Core.Objects.ObjectParameter resultado = new System.Data.Entity.Core.Objects.ObjectParameter("RESULTADO", typeof(string));
+                System.Data.Entity.Core.Objects.ObjectParameter mensaje = new System.Data.Entity.Core.Objects.ObjectParameter("MENSAJE", typeof(string));
+
+
+                entidad.PROG_PRESENTACION_BORRAR(codigoPresentacion, resultado, mensaje);
+
+
+                return new ResultadoTransaccion
+                {
+                    Resultado = resultado.Value.ToString().ToLower() == "ok" ? TipoResultado.Ok : TipoResultado.Error,
+                    Mensaje = mensaje.Value.ToString()
+                };
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 

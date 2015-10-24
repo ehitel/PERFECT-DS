@@ -34,7 +34,7 @@ namespace DS
 
                 ErrorEstructura error = new ErrorEstructura
                 {
-                    Tipo= TipoError.Error,
+                    Tipo = TipoError.Error,
                     Titulo = "Error cargando presentaciones",
                     Seccion = "Cargar datos",
                     Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
@@ -63,7 +63,7 @@ namespace DS
 
                 case "Cerrar":
                     this.Close();
-                   
+
                     break;
 
                 default:
@@ -79,6 +79,97 @@ namespace DS
         void mantenimiento_RegistroModificado(object sender, EventArgs e)
         {
             cargarDatos();
+        }
+
+        private void ultraGrid1_ClickCellButton(object sender, Infragistics.Win.UltraWinGrid.CellEventArgs e)
+        {
+            try
+            {
+
+                if (e.Cell.Column.Key.ToLower() == "editar")
+                {
+
+                    MaestroPresentacionesMantenimiento mantenimiento = new MaestroPresentacionesMantenimiento(e.Cell.Row.Cells["CODIGO_PRESENTACION"].Text);
+                    mantenimiento.RegistroModificado += mantenimiento_RegistroModificado;
+                    mantenimiento.ErrorGenerado += mantenimiento_ErrorGenerado;
+                    mantenimiento.MdiParent = this.MdiParent;
+                    mantenimiento.Show();
+                }
+
+                if (e.Cell.Column.Key.ToLower() == "borrar")
+                {
+                    borrarRegistro(e.Cell.Row.Cells["CODIGO_PRESENTACION"].Text);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                ErrorEstructura error = new ErrorEstructura
+                {
+                    Tipo = TipoError.Error,
+                    Titulo = "Error seleccionadno presentacción",
+                    Seccion = "Selección de presentación",
+                    Comentario = "Puede tratarse de un problema momentáneo de conexión, por favor volver a intentar",
+                    Mensaje = ex.Message,
+                    Trazo = ex.StackTrace
+                };
+
+                mantenimiento_ErrorGenerado(this, error);
+            }
+        }
+
+        void borrarRegistro(string codigoPresentacion)
+        {
+            try
+            {
+
+                if (MessageBox.Show("¿Desea eliminar el registro seleccionado?", "Atención", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+
+                ResultadoTransaccion res = new PresentacionGestor().borrarPresentacion(codigoPresentacion);
+
+                if (res.Resultado == TipoResultado.Error)
+                {
+                    ErrorEstructura error = new ErrorEstructura
+                    {
+                        Tipo = TipoError.Error,
+                        Titulo = "Error borrando presentaciones",
+                        Seccion = "Borrar registros",
+                        Comentario = "El registor podría estar relacionado con otros registros.",
+                        Mensaje = res.Mensaje
+                    };
+
+                    ErrorGenerado(this, error);
+
+
+                }
+                else
+                {
+                    ErrorGenerado(this, new ErrorEstructura { Tipo = TipoError.Confirmacion, Mensaje = res.Mensaje });
+                }
+
+                cargarDatos();
+
+            }
+            catch (Exception ex)
+            {
+
+                ErrorEstructura error = new ErrorEstructura
+                {
+                    Tipo = TipoError.Error,
+                    Titulo = "Error borrando presentacción",
+                    Seccion = "Borrar presentación",
+                    Comentario = "El registor podría estar relacionado con otros registros.",
+                    Mensaje = ex.Message,
+                    Trazo = ex.StackTrace
+                };
+
+                mantenimiento_ErrorGenerado(this, error);
+
+            }
         }
 
 
