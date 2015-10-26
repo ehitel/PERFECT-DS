@@ -83,6 +83,16 @@ namespace DS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circle_check_20 {
+            get {
+                object obj = ResourceManager.GetObject("circle_check_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_16 {
             get {
                 object obj = ResourceManager.GetObject("edit_16", resourceCulture);

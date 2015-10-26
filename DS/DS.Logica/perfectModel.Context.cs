@@ -118,5 +118,27 @@ namespace DS.Logica
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_CATEGORIA_BORRAR", cODIGO_CATEGORIAParameter, rESULTADO, mENSAJE);
         }
+    
+        public virtual ObjectResult<ARTICULO_CONSULTA> PROG_ARTICULO_CONSULTA_GENERAL(string cODIGO_ARTICULO, string nOMBRE_ARTICULO)
+        {
+            var cODIGO_ARTICULOParameter = cODIGO_ARTICULO != null ?
+                new ObjectParameter("CODIGO_ARTICULO", cODIGO_ARTICULO) :
+                new ObjectParameter("CODIGO_ARTICULO", typeof(string));
+    
+            var nOMBRE_ARTICULOParameter = nOMBRE_ARTICULO != null ?
+                new ObjectParameter("NOMBRE_ARTICULO", nOMBRE_ARTICULO) :
+                new ObjectParameter("NOMBRE_ARTICULO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ARTICULO_CONSULTA>("PROG_ARTICULO_CONSULTA_GENERAL", cODIGO_ARTICULOParameter, nOMBRE_ARTICULOParameter);
+        }
+    
+        public virtual ObjectResult<ARTICULO_CONSULTA> PROG_ARTICULO_CONSULTA_UNICO(string cODIGO_ARTICULO)
+        {
+            var cODIGO_ARTICULOParameter = cODIGO_ARTICULO != null ?
+                new ObjectParameter("CODIGO_ARTICULO", cODIGO_ARTICULO) :
+                new ObjectParameter("CODIGO_ARTICULO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ARTICULO_CONSULTA>("PROG_ARTICULO_CONSULTA_UNICO", cODIGO_ARTICULOParameter);
+        }
     }
 }

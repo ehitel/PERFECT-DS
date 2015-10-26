@@ -101,11 +101,23 @@
     </Compile>
     <Compile Include="IMantenimiento.cs" />
     <Compile Include="IWindow.cs" />
+    <Compile Include="MaestroArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroArticulos.Designer.cs">
+      <DependentUpon>MaestroArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaestroCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaestroCategorias.Designer.cs">
       <DependentUpon>MaestroCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaestroArticulosMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaestroArticulosMantenimiento.Designer.cs">
+      <DependentUpon>MaestroArticulosMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="MaestroPresentaciones.cs">
       <SubType>Form</SubType>
@@ -146,8 +158,14 @@
     <EmbeddedResource Include="ErrorMostrar.resx">
       <DependentUpon>ErrorMostrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaestroArticulos.resx">
+      <DependentUpon>MaestroArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaestroCategorias.resx">
       <DependentUpon>MaestroCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaestroArticulosMantenimiento.resx">
+      <DependentUpon>MaestroArticulosMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaestroPresentaciones.resx">
       <DependentUpon>MaestroPresentaciones.cs</DependentUpon>
@@ -208,6 +226,7 @@
     <Content Include="Recursos\Imagenes\back_32.png" />
     <Content Include="Recursos\Imagenes\borrar16.png" />
     <Content Include="Recursos\Imagenes\buscar16.png" />
+    <Content Include="Recursos\Imagenes\circle_check_20.png" />
     <Content Include="Recursos\Imagenes\down_32.png" />
     <Content Include="Recursos\Imagenes\edit_16.png" />
     <Content Include="Recursos\Imagenes\exit_32.png" />

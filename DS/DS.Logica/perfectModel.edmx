@@ -34,6 +34,13 @@
         <Function Name="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_CATEGORIA" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="PROG_ARTICULO_CONSULTA_GENERAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_ARTICULO" Type="varchar" Mode="In" />
+          <Parameter Name="NOMBRE_ARTICULO" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="PROG_ARTICULO_CONSULTA_UNICO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_ARTICULO" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="PROG_PRESENTACION_ACTUALIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_PRESENTACION" Type="varchar" Mode="In" />
           <Parameter Name="NOMBRE_PRESENTACION" Type="varchar" Mode="In" />
@@ -100,6 +107,13 @@
             <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
             <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="PROG_ARTICULO_CONSULTA_GENERAL" ReturnType="Collection(PERFECTModel.ARTICULO_CONSULTA)">
+            <Parameter Name="CODIGO_ARTICULO" Mode="In" Type="String" />
+            <Parameter Name="NOMBRE_ARTICULO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_ARTICULO_CONSULTA_UNICO" ReturnType="Collection(PERFECTModel.ARTICULO_CONSULTA)">
+            <Parameter Name="CODIGO_ARTICULO" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PERMISO_USUARIO_MODULO">
           <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
@@ -133,10 +147,28 @@
           <Property Type="String" Name="NOMBRE_CATEGORIA" Nullable="false" MaxLength="100" />
           <Property Type="Int32" Name="ARTICULOS_RELACION" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="PROG_ARTICULO_CATEGORIA_CONSULTA_UNICO_Result">
+        <ComplexType Name="ARTICULO_CONSULTA">
+          <Property Type="String" Name="CODIGO_ARTICULO" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NOMBRE_ARTICULO" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="NOMBRE_CORTO" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="500" />
           <Property Type="String" Name="CODIGO_CATEGORIA" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="NOMBRE_CATEGORIA" Nullable="false" MaxLength="100" />
-          <Property Type="Int32" Name="ARTICULOS_RELACION" Nullable="true" />
+          <Property Type="String" Name="CLASIFICACION1" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CLASIFICACION2" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CLASIFICACION3" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CLASIFICACION4" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PRESENTACION_BASE" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="NOMBRE_PRESENTACION" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="PERMITE_VENTA" Nullable="false" />
+          <Property Type="Boolean" Name="PERMITE_COMPRA" Nullable="false" />
+          <Property Type="Boolean" Name="CAMBIAR_DESCRIPCION" Nullable="false" />
+          <Property Type="Boolean" Name="CONSULTAR_PRECIO" Nullable="false" />
+          <Property Type="Boolean" Name="PAGA_IMPUESTO" Nullable="false" />
+          <Property Type="Decimal" Name="PRECIO_VENTA" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="INVENTARIO_MINIMO" Nullable="false" />
+          <Property Type="Int32" Name="INVENTARIO_MAXIMO" Nullable="false" />
+          <Property Type="Boolean" Name="MANEJA_INVENTARIO" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -211,6 +243,60 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CATEGORIA_BORRAR" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CATEGORIA_BORRAR" />
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CONSULTA_GENERAL" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CONSULTA_GENERAL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.ARTICULO_CONSULTA">
+                <ScalarProperty Name="CODIGO_ARTICULO" ColumnName="CODIGO_ARTICULO" />
+                <ScalarProperty Name="NOMBRE_ARTICULO" ColumnName="NOMBRE_ARTICULO" />
+                <ScalarProperty Name="NOMBRE_CORTO" ColumnName="NOMBRE_CORTO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="CLASIFICACION1" ColumnName="CLASIFICACION1" />
+                <ScalarProperty Name="CLASIFICACION2" ColumnName="CLASIFICACION2" />
+                <ScalarProperty Name="CLASIFICACION3" ColumnName="CLASIFICACION3" />
+                <ScalarProperty Name="CLASIFICACION4" ColumnName="CLASIFICACION4" />
+                <ScalarProperty Name="PRESENTACION_BASE" ColumnName="PRESENTACION_BASE" />
+                <ScalarProperty Name="NOMBRE_PRESENTACION" ColumnName="NOMBRE_PRESENTACION" />
+                <ScalarProperty Name="PERMITE_VENTA" ColumnName="PERMITE_VENTA" />
+                <ScalarProperty Name="PERMITE_COMPRA" ColumnName="PERMITE_COMPRA" />
+                <ScalarProperty Name="CAMBIAR_DESCRIPCION" ColumnName="CAMBIAR_DESCRIPCION" />
+                <ScalarProperty Name="CONSULTAR_PRECIO" ColumnName="CONSULTAR_PRECIO" />
+                <ScalarProperty Name="PAGA_IMPUESTO" ColumnName="PAGA_IMPUESTO" />
+                <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+                <ScalarProperty Name="INVENTARIO_MINIMO" ColumnName="INVENTARIO_MINIMO" />
+                <ScalarProperty Name="INVENTARIO_MAXIMO" ColumnName="INVENTARIO_MAXIMO" />
+                <ScalarProperty Name="MANEJA_INVENTARIO" ColumnName="MANEJA_INVENTARIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_CONSULTA_UNICO" FunctionName="PERFECTModel.Store.PROG_ARTICULO_CONSULTA_UNICO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PERFECTModel.ARTICULO_CONSULTA">
+                <ScalarProperty Name="CODIGO_ARTICULO" ColumnName="CODIGO_ARTICULO" />
+                <ScalarProperty Name="NOMBRE_ARTICULO" ColumnName="NOMBRE_ARTICULO" />
+                <ScalarProperty Name="NOMBRE_CORTO" ColumnName="NOMBRE_CORTO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="CODIGO_CATEGORIA" ColumnName="CODIGO_CATEGORIA" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="CLASIFICACION1" ColumnName="CLASIFICACION1" />
+                <ScalarProperty Name="CLASIFICACION2" ColumnName="CLASIFICACION2" />
+                <ScalarProperty Name="CLASIFICACION3" ColumnName="CLASIFICACION3" />
+                <ScalarProperty Name="CLASIFICACION4" ColumnName="CLASIFICACION4" />
+                <ScalarProperty Name="PRESENTACION_BASE" ColumnName="PRESENTACION_BASE" />
+                <ScalarProperty Name="NOMBRE_PRESENTACION" ColumnName="NOMBRE_PRESENTACION" />
+                <ScalarProperty Name="PERMITE_VENTA" ColumnName="PERMITE_VENTA" />
+                <ScalarProperty Name="PERMITE_COMPRA" ColumnName="PERMITE_COMPRA" />
+                <ScalarProperty Name="CAMBIAR_DESCRIPCION" ColumnName="CAMBIAR_DESCRIPCION" />
+                <ScalarProperty Name="CONSULTAR_PRECIO" ColumnName="CONSULTAR_PRECIO" />
+                <ScalarProperty Name="PAGA_IMPUESTO" ColumnName="PAGA_IMPUESTO" />
+                <ScalarProperty Name="PRECIO_VENTA" ColumnName="PRECIO_VENTA" />
+                <ScalarProperty Name="INVENTARIO_MINIMO" ColumnName="INVENTARIO_MINIMO" />
+                <ScalarProperty Name="INVENTARIO_MAXIMO" ColumnName="INVENTARIO_MAXIMO" />
+                <ScalarProperty Name="MANEJA_INVENTARIO" ColumnName="MANEJA_INVENTARIO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

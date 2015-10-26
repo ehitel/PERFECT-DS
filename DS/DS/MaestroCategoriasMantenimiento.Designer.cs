@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.UltraToolbar ultraToolbar1 = new Infragistics.Win.UltraWinToolbars.UltraToolbar("General");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("guardarRegistro");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("agregarRegistro");
-            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool4 = new Infragistics.Win.UltraWinToolbars.ButtonTool("guardarRegistro");
-            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar");
-            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool1");
             this.ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,8 +64,8 @@
             // 
             // ultraPanel1
             // 
-            appearance2.BackColor = System.Drawing.Color.DimGray;
-            this.ultraPanel1.Appearance = appearance2;
+            appearance1.BackColor = System.Drawing.Color.DimGray;
+            this.ultraPanel1.Appearance = appearance1;
             // 
             // ultraPanel1.ClientArea
             // 
@@ -122,14 +122,14 @@
             this.ultraToolbarsManager1.ToolbarSettings.AllowFloating = Infragistics.Win.DefaultableBoolean.False;
             this.ultraToolbarsManager1.ToolbarSettings.AllowHiding = Infragistics.Win.DefaultableBoolean.False;
             this.ultraToolbarsManager1.ToolbarSettings.FillEntireRow = Infragistics.Win.DefaultableBoolean.True;
-            appearance3.Image = global::DS.Properties.Resources.add_32;
-            buttonTool2.SharedPropsInternal.AppearancesLarge.Appearance = appearance3;
+            appearance2.Image = global::DS.Properties.Resources.add_32;
+            buttonTool2.SharedPropsInternal.AppearancesLarge.Appearance = appearance2;
             buttonTool2.SharedPropsInternal.Caption = "agregarRegistro";
-            appearance4.Image = global::DS.Properties.Resources.save_blue_32;
-            buttonTool4.SharedPropsInternal.AppearancesLarge.Appearance = appearance4;
+            appearance3.Image = global::DS.Properties.Resources.save_blue_32;
+            buttonTool4.SharedPropsInternal.AppearancesLarge.Appearance = appearance3;
             buttonTool4.SharedPropsInternal.Caption = "guardarRegistro";
-            appearance5.Image = global::DS.Properties.Resources.exit_32;
-            buttonTool6.SharedPropsInternal.AppearancesLarge.Appearance = appearance5;
+            appearance4.Image = global::DS.Properties.Resources.exit_32;
+            buttonTool6.SharedPropsInternal.AppearancesLarge.Appearance = appearance4;
             buttonTool6.SharedPropsInternal.Caption = "Cerrar";
             buttonTool7.SharedPropsInternal.Caption = "ButtonTool1";
             this.ultraToolbarsManager1.Tools.AddRange(new Infragistics.Win.UltraWinToolbars.ToolBase[] {
@@ -249,7 +249,7 @@
             this.Controls.Add(this.ultraPanel1);
             this.Name = "MaestroCategoriasMantenimiento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Presentaciones";
+            this.Text = "Categorias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ultraPanel1.ClientArea.ResumeLayout(false);
             this.ultraPanel1.ClientArea.PerformLayout();
