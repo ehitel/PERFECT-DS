@@ -25,16 +25,16 @@ namespace DS
 
             validacion = new ValidacionCampos();
 
-            validacion.agregarValidacion(codigoCategoríaTextBox, TipoCampos.Texto, string.Empty);
-            validacion.agregarValidacion(descripcionCategoriaTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(codigoArticuloTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(nombreLargoTextBox, TipoCampos.Texto, string.Empty);
 
-            codigoCategoríaTextBox.Text = codigoCategoria;
-            codigoCategoríaTextBox.ReadOnly = true;
+            codigoArticuloTextBox.Text = codigoCategoria;
+            codigoArticuloTextBox.ReadOnly = true;
 
 
             CargarRegistro();
 
-            codigoCategoríaTextBox.TextChanged += codigoCategoríaTextBox_TextChanged;
+            codigoArticuloTextBox.TextChanged += codigoCategoríaTextBox_TextChanged;
 
 
         }
@@ -45,13 +45,13 @@ namespace DS
 
             validacion = new ValidacionCampos();
 
-            validacion.agregarValidacion(codigoCategoríaTextBox, TipoCampos.Texto, string.Empty);
-            validacion.agregarValidacion(descripcionCategoriaTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(codigoArticuloTextBox, TipoCampos.Texto, string.Empty);
+            validacion.agregarValidacion(nombreLargoTextBox, TipoCampos.Texto, string.Empty);
 
 
-            codigoCategoríaTextBox.TextChanged += codigoCategoríaTextBox_TextChanged;
+            codigoArticuloTextBox.TextChanged += codigoCategoríaTextBox_TextChanged;
 
-
+            generarDocumento();
 
         }
 
@@ -88,8 +88,8 @@ namespace DS
 
                 ARTICULO_CATEGORIA categoria = new ARTICULO_CATEGORIA();
 
-                categoria.CODIGO_CATEGORIA = codigoCategoríaTextBox.Text;
-                categoria.NOMBRE_CATEGORIA = descripcionCategoriaTextBox.Text;
+                categoria.CODIGO_CATEGORIA = codigoArticuloTextBox.Text;
+                categoria.NOMBRE_CATEGORIA = nombreLargoTextBox.Text;
 
                 ResultadoTransaccion res = new ArticuloCategoriaGestor().guardarRegistro(categoria);
 
@@ -138,10 +138,10 @@ namespace DS
 
         void Limpiar()
         {
-            codigoCategoríaTextBox.ReadOnly = false;
-            codigoCategoríaTextBox.Clear();
-            descripcionCategoriaTextBox.Clear();
-            codigoCategoríaTextBox.Focus();
+            codigoArticuloTextBox.ReadOnly = false;
+            codigoArticuloTextBox.Clear();
+            nombreLargoTextBox.Clear();
+            codigoArticuloTextBox.Focus();
         }
 
 
@@ -149,12 +149,12 @@ namespace DS
         {
             try
             {
-                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoCategoríaTextBox.Text);
+                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoArticuloTextBox.Text);
 
 
-                descripcionCategoriaTextBox.Text = categoria.NOMBRE_CATEGORIA;
+                nombreLargoTextBox.Text = categoria.NOMBRE_CATEGORIA;
 
-                descripcionCategoriaTextBox.Focus();
+                nombreLargoTextBox.Focus();
 
 
             }
@@ -183,7 +183,7 @@ namespace DS
         {
             try
             {
-                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoCategoríaTextBox.Text);
+                CATEGORIA_CONSULTA categoria = new ArticuloCategoriaGestor().obterCategoria(codigoArticuloTextBox.Text);
 
                 if (categoria == null)
                 {
@@ -228,7 +228,7 @@ namespace DS
 
 
                 XmlNode nodo = doc.CreateElement("CODIGO_ARTICULO");
-                nodo.AppendChild(doc.CreateTextNode("0001"));
+                nodo.AppendChild(doc.CreateTextNode(""));
                 articuloNodo.AppendChild(nodo);
 
 
@@ -237,18 +237,118 @@ namespace DS
                 articuloNodo.AppendChild(nodo);
 
 
+                nodo = doc.CreateElement("NOMBRE_CORTO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("DESCRIPCION");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CODIGO_CATEGORIA");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CLASIFICACION1");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CLASIFICACION2");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CLASIFICACION3");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("CLASIFICACION4");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("PRESENTACION_BASE");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("PERMITE_VENTA");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("PERMITE_COMPRA");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CAMBIAR_DESCRIPCION");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("CONSULTAR_PRECIO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+                nodo = doc.CreateElement("PAGA_IMPUESTO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("PRECIO_VENTA");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("MANEJA_INVENTARIO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("INVENTARIO_MINIMO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+                nodo = doc.CreateElement("INVENTARIO_MAXIMO");
+                nodo.AppendChild(doc.CreateTextNode("ESTOS ES UNA PRUEBA"));
+                articuloNodo.AppendChild(nodo);
+
+
+
                 XmlNode presentacionesNodo = doc.CreateElement("PRESENTACIONES");
                 articuloNodo.AppendChild(presentacionesNodo);
 
+
+                XmlNode presentacionesSubNodo = doc.CreateElement("PRESENTACION");
+                presentacionesNodo.AppendChild(presentacionesSubNodo);
+
+
                 XmlNode presentacionNodo = doc.CreateElement("CODIGO_PRESENTACION");
                 presentacionNodo.AppendChild(doc.CreateTextNode("0001"));
-                presentacionesNodo.AppendChild(presentacionNodo);
+                presentacionesSubNodo.AppendChild(presentacionNodo);
 
                 presentacionNodo = doc.CreateElement("FACTOR");
                 presentacionNodo.AppendChild(doc.CreateTextNode("1"));
-                presentacionesNodo.AppendChild(presentacionNodo);
+                presentacionesSubNodo.AppendChild(presentacionNodo);
 
-                return doc.InnerXml.ToString();
+                presentacionesSubNodo = doc.CreateElement("PRESENTACION");
+                presentacionesNodo.AppendChild(presentacionesSubNodo);
+
+
+                presentacionNodo = doc.CreateElement("CODIGO_PRESENTACION");
+                presentacionNodo.AppendChild(doc.CreateTextNode("0001"));
+                presentacionesSubNodo.AppendChild(presentacionNodo);
+
+                presentacionNodo = doc.CreateElement("FACTOR");
+                presentacionNodo.AppendChild(doc.CreateTextNode("1"));
+                presentacionesSubNodo.AppendChild(presentacionNodo);
+
+
+                string xmlDoc = doc.InnerXml.ToString();
+
+                return xmlDoc;
+
 
             }
             catch (Exception ex)

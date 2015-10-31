@@ -118,6 +118,8 @@ namespace DS
                 menuGrupo = new Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarGroup();
                 menuGrupo.Text = grupo.CODIGO_CATEGORIA;
                 menuGrupo.Key = grupo.NOMBRE_CATEGORIA;
+                menuGrupo.Settings.AppearancesLarge.Appearance.Image = Image.FromFile(Application.StartupPath + @"\Recursos\Forms\" + "menu_32.png");
+                menuGrupo.Settings.AppearancesSmall.Appearance.Image = Image.FromFile(Application.StartupPath + @"\Recursos\Forms\" + "menu_32.png");
 
                 var opciones = permisos.Where(p => p.CODIGO_CATEGORIA == grupo.CODIGO_CATEGORIA).Select(p => p);
 

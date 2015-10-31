@@ -225,7 +225,7 @@
             this.menuLateralBar.Appearance = appearance6;
             this.menuLateralBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuLateralBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            appearance7.BackColor = System.Drawing.Color.Gray;
+            appearance7.BackColor = System.Drawing.Color.LightSteelBlue;
             appearance7.BackColor2 = System.Drawing.Color.Silver;
             this.menuLateralBar.GroupSettings.AppearancesLarge.ActiveHeaderAppearance = appearance7;
             appearance8.BackColor = System.Drawing.Color.White;
@@ -234,7 +234,7 @@
             appearance9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             appearance9.BackColor2 = System.Drawing.Color.White;
             this.menuLateralBar.GroupSettings.AppearancesLarge.HeaderHotTrackAppearance = appearance9;
-            appearance10.BackColor = System.Drawing.Color.Silver;
+            appearance10.BackColor = System.Drawing.Color.DodgerBlue;
             appearance10.BackColor2 = System.Drawing.Color.Silver;
             this.menuLateralBar.GroupSettings.AppearancesSmall.ActiveHeaderAppearance = appearance10;
             appearance11.BackColor = System.Drawing.Color.White;
@@ -245,7 +245,7 @@
             this.menuLateralBar.GroupSettings.AppearancesSmall.HeaderAppearance = appearance11;
             this.menuLateralBar.GroupSettings.BorderStyleItemArea = Infragistics.Win.UIElementBorderStyle.None;
             this.menuLateralBar.GroupSettings.Style = Infragistics.Win.UltraWinExplorerBar.GroupStyle.LargeImagesWithText;
-            this.menuLateralBar.ImageSizeLarge = new System.Drawing.Size(22, 22);
+            this.menuLateralBar.ImageSizeLarge = new System.Drawing.Size(16, 16);
             appearance12.BackColor = System.Drawing.Color.LightGray;
             appearance12.BorderColor = System.Drawing.Color.White;
             this.menuLateralBar.ItemSettings.AppearancesLarge.ActiveAppearance = appearance12;

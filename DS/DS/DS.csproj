@@ -223,6 +223,9 @@
     <Content Include="Recursos\Forms\empaque32.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Recursos\Forms\menu_32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Recursos\Imagenes\back_32.png" />
     <Content Include="Recursos\Imagenes\borrar16.png" />
     <Content Include="Recursos\Imagenes\buscar16.png" />
