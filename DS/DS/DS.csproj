@@ -99,6 +99,7 @@
     <Compile Include="ErrorMostrar.Designer.cs">
       <DependentUpon>ErrorMostrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneraXML.cs" />
     <Compile Include="IMantenimiento.cs" />
     <Compile Include="IWindow.cs" />
     <Compile Include="MaestroArticulos.cs">

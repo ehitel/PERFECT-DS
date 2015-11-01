@@ -26,7 +26,7 @@ namespace DS
         {
             try
             {
-                ultraGrid1.SetDataBinding(new ArticuloCategoriaGestor().obtenerCatalogo(), null, true);
+                ultraGrid1.SetDataBinding(new ArticuloGestor().obtenerCatalogo(string.Empty, string.Empty) , null, true);
                 ultraGrid1.DataBind();
             }
             catch (Exception ex)
@@ -89,7 +89,8 @@ namespace DS
                 if (e.Cell.Column.Key.ToLower() == "editar")
                 {
 
-                    MaestroCategoriasMantenimiento mantenimiento = new MaestroCategoriasMantenimiento(e.Cell.Row.Cells["CODIGO_CATEGORIA"].Text);
+                  
+                    MaestroArticulosMantenimiento mantenimiento = new MaestroArticulosMantenimiento(e.Cell.Row.Cells["CODIGO_ARTICULO"].Text);
                     mantenimiento.RegistroModificado += mantenimiento_RegistroModificado;
                     mantenimiento.ErrorGenerado += mantenimiento_ErrorGenerado;
                     mantenimiento.MdiParent = this.MdiParent;
@@ -98,7 +99,7 @@ namespace DS
 
                 if (e.Cell.Column.Key.ToLower() == "borrar")
                 {
-                    borrarRegistro(e.Cell.Row.Cells["CODIGO_CATEGORIA"].Text);
+                    borrarRegistro(e.Cell.Row.Cells["CODIGO_ARTICULO"].Text);
                 }
 
             }

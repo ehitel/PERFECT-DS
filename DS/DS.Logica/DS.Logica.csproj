@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ARTICULO.cs">
+      <DependentUpon>perfectModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ArticuloCategoriaGestor.cs" />
     <Compile Include="ArticuloGestor.cs" />
     <Compile Include="ARTICULO_CATEGORIA.cs">

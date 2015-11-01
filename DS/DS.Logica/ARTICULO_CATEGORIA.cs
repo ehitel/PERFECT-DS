@@ -14,7 +14,14 @@ namespace DS.Logica
     
     public partial class ARTICULO_CATEGORIA
     {
+        public ARTICULO_CATEGORIA()
+        {
+            this.ARTICULO = new HashSet<ARTICULO>();
+        }
+    
         public string CODIGO_CATEGORIA { get; set; }
         public string NOMBRE_CATEGORIA { get; set; }
+    
+        public virtual ICollection<ARTICULO> ARTICULO { get; set; }
     }
 }

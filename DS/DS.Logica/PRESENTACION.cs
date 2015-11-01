@@ -14,7 +14,14 @@ namespace DS.Logica
     
     public partial class PRESENTACION
     {
+        public PRESENTACION()
+        {
+            this.ARTICULO = new HashSet<ARTICULO>();
+        }
+    
         public string CODIGO_PRESENTACION { get; set; }
         public string NOMBRE_PRESENTACION { get; set; }
+    
+        public virtual ICollection<ARTICULO> ARTICULO { get; set; }
     }
 }

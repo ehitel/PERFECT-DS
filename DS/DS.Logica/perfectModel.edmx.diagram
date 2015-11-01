@@ -7,6 +7,9 @@
       <Diagram DiagramId="a28a885911854ca19f619a2cebee27cc" Name="Diagram1" >
         <EntityTypeShape EntityType="PERFECTModel.PRESENTACION" Width="1.5" PointX="0.5" PointY="0.75" />
         <EntityTypeShape EntityType="PERFECTModel.ARTICULO_CATEGORIA" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PERFECTModel.ARTICULO" Width="1.5" PointX="5.625" PointY="0.75" />
+        <AssociationConnector Association="PERFECTModel.FK_ARTICULO_ARTICULO_CATEGORIA" />
+        <AssociationConnector Association="PERFECTModel.FK_ARTICULO_PRESENTACION" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

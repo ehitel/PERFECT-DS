@@ -29,6 +29,7 @@ namespace DS.Logica
     
         public virtual DbSet<PRESENTACION> PRESENTACION { get; set; }
         public virtual DbSet<ARTICULO_CATEGORIA> ARTICULO_CATEGORIA { get; set; }
+        public virtual DbSet<ARTICULO> ARTICULO { get; set; }
     
         public virtual ObjectResult<PERMISO_USUARIO_MODULO> SEGURIDAD_OBTENER_PERMISOS_USUARIO_MODULO(string cODIGO_USUARIO, string cODIGO_MODULO, string dESCRIPCION)
         {
@@ -139,6 +140,87 @@ namespace DS.Logica
                 new ObjectParameter("CODIGO_ARTICULO", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ARTICULO_CONSULTA>("PROG_ARTICULO_CONSULTA_UNICO", cODIGO_ARTICULOParameter);
+        }
+    
+        public virtual int PROG_ARTICULO_ACTUALIZA(string cODIGO_ARTICULO, string nOMBRE_ARTICULO, string nOMBRE_CORTO, string dESCRIPCION, string cODIGO_CATEGORIA, string cLASIFICACION1, string cLASIFICACION2, string cLASIFICACION3, string cLASIFICACION4, string pRESENTACION_BASE, Nullable<bool> pERMITE_VENTA, Nullable<bool> pERMITE_COMPRA, Nullable<bool> cAMBIAR_DESCRIPCION, Nullable<bool> cONSULTAR_PRECIO, Nullable<bool> pAGA_IMPUESTO, Nullable<decimal> pRECIO_VENTA, Nullable<bool> mANEJA_INVENTARIO, Nullable<int> iNVENTARIO_MINIMO, Nullable<int> iNVENTARIO_MAXIMO, ObjectParameter rESULTADO, ObjectParameter mENSAJE)
+        {
+            var cODIGO_ARTICULOParameter = cODIGO_ARTICULO != null ?
+                new ObjectParameter("CODIGO_ARTICULO", cODIGO_ARTICULO) :
+                new ObjectParameter("CODIGO_ARTICULO", typeof(string));
+    
+            var nOMBRE_ARTICULOParameter = nOMBRE_ARTICULO != null ?
+                new ObjectParameter("NOMBRE_ARTICULO", nOMBRE_ARTICULO) :
+                new ObjectParameter("NOMBRE_ARTICULO", typeof(string));
+    
+            var nOMBRE_CORTOParameter = nOMBRE_CORTO != null ?
+                new ObjectParameter("NOMBRE_CORTO", nOMBRE_CORTO) :
+                new ObjectParameter("NOMBRE_CORTO", typeof(string));
+    
+            var dESCRIPCIONParameter = dESCRIPCION != null ?
+                new ObjectParameter("DESCRIPCION", dESCRIPCION) :
+                new ObjectParameter("DESCRIPCION", typeof(string));
+    
+            var cODIGO_CATEGORIAParameter = cODIGO_CATEGORIA != null ?
+                new ObjectParameter("CODIGO_CATEGORIA", cODIGO_CATEGORIA) :
+                new ObjectParameter("CODIGO_CATEGORIA", typeof(string));
+    
+            var cLASIFICACION1Parameter = cLASIFICACION1 != null ?
+                new ObjectParameter("CLASIFICACION1", cLASIFICACION1) :
+                new ObjectParameter("CLASIFICACION1", typeof(string));
+    
+            var cLASIFICACION2Parameter = cLASIFICACION2 != null ?
+                new ObjectParameter("CLASIFICACION2", cLASIFICACION2) :
+                new ObjectParameter("CLASIFICACION2", typeof(string));
+    
+            var cLASIFICACION3Parameter = cLASIFICACION3 != null ?
+                new ObjectParameter("CLASIFICACION3", cLASIFICACION3) :
+                new ObjectParameter("CLASIFICACION3", typeof(string));
+    
+            var cLASIFICACION4Parameter = cLASIFICACION4 != null ?
+                new ObjectParameter("CLASIFICACION4", cLASIFICACION4) :
+                new ObjectParameter("CLASIFICACION4", typeof(string));
+    
+            var pRESENTACION_BASEParameter = pRESENTACION_BASE != null ?
+                new ObjectParameter("PRESENTACION_BASE", pRESENTACION_BASE) :
+                new ObjectParameter("PRESENTACION_BASE", typeof(string));
+    
+            var pERMITE_VENTAParameter = pERMITE_VENTA.HasValue ?
+                new ObjectParameter("PERMITE_VENTA", pERMITE_VENTA) :
+                new ObjectParameter("PERMITE_VENTA", typeof(bool));
+    
+            var pERMITE_COMPRAParameter = pERMITE_COMPRA.HasValue ?
+                new ObjectParameter("PERMITE_COMPRA", pERMITE_COMPRA) :
+                new ObjectParameter("PERMITE_COMPRA", typeof(bool));
+    
+            var cAMBIAR_DESCRIPCIONParameter = cAMBIAR_DESCRIPCION.HasValue ?
+                new ObjectParameter("CAMBIAR_DESCRIPCION", cAMBIAR_DESCRIPCION) :
+                new ObjectParameter("CAMBIAR_DESCRIPCION", typeof(bool));
+    
+            var cONSULTAR_PRECIOParameter = cONSULTAR_PRECIO.HasValue ?
+                new ObjectParameter("CONSULTAR_PRECIO", cONSULTAR_PRECIO) :
+                new ObjectParameter("CONSULTAR_PRECIO", typeof(bool));
+    
+            var pAGA_IMPUESTOParameter = pAGA_IMPUESTO.HasValue ?
+                new ObjectParameter("PAGA_IMPUESTO", pAGA_IMPUESTO) :
+                new ObjectParameter("PAGA_IMPUESTO", typeof(bool));
+    
+            var pRECIO_VENTAParameter = pRECIO_VENTA.HasValue ?
+                new ObjectParameter("PRECIO_VENTA", pRECIO_VENTA) :
+                new ObjectParameter("PRECIO_VENTA", typeof(decimal));
+    
+            var mANEJA_INVENTARIOParameter = mANEJA_INVENTARIO.HasValue ?
+                new ObjectParameter("MANEJA_INVENTARIO", mANEJA_INVENTARIO) :
+                new ObjectParameter("MANEJA_INVENTARIO", typeof(bool));
+    
+            var iNVENTARIO_MINIMOParameter = iNVENTARIO_MINIMO.HasValue ?
+                new ObjectParameter("INVENTARIO_MINIMO", iNVENTARIO_MINIMO) :
+                new ObjectParameter("INVENTARIO_MINIMO", typeof(int));
+    
+            var iNVENTARIO_MAXIMOParameter = iNVENTARIO_MAXIMO.HasValue ?
+                new ObjectParameter("INVENTARIO_MAXIMO", iNVENTARIO_MAXIMO) :
+                new ObjectParameter("INVENTARIO_MAXIMO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_ACTUALIZA", cODIGO_ARTICULOParameter, nOMBRE_ARTICULOParameter, nOMBRE_CORTOParameter, dESCRIPCIONParameter, cODIGO_CATEGORIAParameter, cLASIFICACION1Parameter, cLASIFICACION2Parameter, cLASIFICACION3Parameter, cLASIFICACION4Parameter, pRESENTACION_BASEParameter, pERMITE_VENTAParameter, pERMITE_COMPRAParameter, cAMBIAR_DESCRIPCIONParameter, cONSULTAR_PRECIOParameter, pAGA_IMPUESTOParameter, pRECIO_VENTAParameter, mANEJA_INVENTARIOParameter, iNVENTARIO_MINIMOParameter, iNVENTARIO_MAXIMOParameter, rESULTADO, mENSAJE);
         }
     }
 }

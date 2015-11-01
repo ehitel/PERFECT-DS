@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.UltraToolbar ultraToolbar1 = new Infragistics.Win.UltraWinToolbars.UltraToolbar("General");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool5 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool3 = new Infragistics.Win.UltraWinToolbars.ButtonTool("guardarRegistro");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool1 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar");
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool2 = new Infragistics.Win.UltraWinToolbars.ButtonTool("agregarRegistro");
@@ -40,6 +41,8 @@
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool6 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar");
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool7 = new Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool1");
+            Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo");
+            Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
@@ -56,10 +59,10 @@
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.ultraNumericEditor3 = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+            this.manejaInventarioCheckBox = new System.Windows.Forms.CheckBox();
+            this.inventarioMaximoTextBox = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
             this.label15 = new System.Windows.Forms.Label();
-            this.ultraNumericEditor2 = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+            this.inventarioMinimoTextBox = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
             this.label14 = new System.Windows.Forms.Label();
             this.presentacionBaseComboBox = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -92,8 +95,8 @@
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.ultraTabPageControl1.SuspendLayout();
             this.ultraTabPageControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraNumericEditor3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraNumericEditor2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioMaximoTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioMinimoTextBox)).BeginInit();
             this.ultraTabPageControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precioVentaEstandarTextBox)).BeginInit();
             this.ultraPanel1.ClientArea.SuspendLayout();
@@ -219,10 +222,10 @@
             // ultraTabPageControl3
             // 
             this.ultraTabPageControl3.AutoScroll = true;
-            this.ultraTabPageControl3.Controls.Add(this.checkBox6);
-            this.ultraTabPageControl3.Controls.Add(this.ultraNumericEditor3);
+            this.ultraTabPageControl3.Controls.Add(this.manejaInventarioCheckBox);
+            this.ultraTabPageControl3.Controls.Add(this.inventarioMaximoTextBox);
             this.ultraTabPageControl3.Controls.Add(this.label15);
-            this.ultraTabPageControl3.Controls.Add(this.ultraNumericEditor2);
+            this.ultraTabPageControl3.Controls.Add(this.inventarioMinimoTextBox);
             this.ultraTabPageControl3.Controls.Add(this.label14);
             this.ultraTabPageControl3.Controls.Add(this.presentacionBaseComboBox);
             this.ultraTabPageControl3.Controls.Add(this.label12);
@@ -230,23 +233,25 @@
             this.ultraTabPageControl3.Name = "ultraTabPageControl3";
             this.ultraTabPageControl3.Size = new System.Drawing.Size(863, 415);
             // 
-            // checkBox6
+            // manejaInventarioCheckBox
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(149, 102);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(110, 17);
-            this.checkBox6.TabIndex = 51;
-            this.checkBox6.Text = "Maneja inventario";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.manejaInventarioCheckBox.AutoSize = true;
+            this.manejaInventarioCheckBox.Checked = true;
+            this.manejaInventarioCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.manejaInventarioCheckBox.Location = new System.Drawing.Point(149, 102);
+            this.manejaInventarioCheckBox.Name = "manejaInventarioCheckBox";
+            this.manejaInventarioCheckBox.Size = new System.Drawing.Size(110, 17);
+            this.manejaInventarioCheckBox.TabIndex = 51;
+            this.manejaInventarioCheckBox.Text = "Maneja inventario";
+            this.manejaInventarioCheckBox.UseVisualStyleBackColor = true;
             // 
-            // ultraNumericEditor3
+            // inventarioMaximoTextBox
             // 
-            this.ultraNumericEditor3.FormatString = "";
-            this.ultraNumericEditor3.Location = new System.Drawing.Point(149, 73);
-            this.ultraNumericEditor3.Name = "ultraNumericEditor3";
-            this.ultraNumericEditor3.Size = new System.Drawing.Size(146, 21);
-            this.ultraNumericEditor3.TabIndex = 41;
+            this.inventarioMaximoTextBox.FormatString = "";
+            this.inventarioMaximoTextBox.Location = new System.Drawing.Point(149, 73);
+            this.inventarioMaximoTextBox.Name = "inventarioMaximoTextBox";
+            this.inventarioMaximoTextBox.Size = new System.Drawing.Size(146, 21);
+            this.inventarioMaximoTextBox.TabIndex = 41;
             // 
             // label15
             // 
@@ -257,13 +262,13 @@
             this.label15.TabIndex = 40;
             this.label15.Text = "Máximo inventario:";
             // 
-            // ultraNumericEditor2
+            // inventarioMinimoTextBox
             // 
-            this.ultraNumericEditor2.FormatString = "";
-            this.ultraNumericEditor2.Location = new System.Drawing.Point(149, 46);
-            this.ultraNumericEditor2.Name = "ultraNumericEditor2";
-            this.ultraNumericEditor2.Size = new System.Drawing.Size(146, 21);
-            this.ultraNumericEditor2.TabIndex = 39;
+            this.inventarioMinimoTextBox.FormatString = "";
+            this.inventarioMinimoTextBox.Location = new System.Drawing.Point(149, 46);
+            this.inventarioMinimoTextBox.Name = "inventarioMinimoTextBox";
+            this.inventarioMinimoTextBox.Size = new System.Drawing.Size(146, 21);
+            this.inventarioMinimoTextBox.TabIndex = 39;
             // 
             // label14
             // 
@@ -414,8 +419,10 @@
             this.ultraToolbarsManager1.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2010;
             ultraToolbar1.DockedColumn = 0;
             ultraToolbar1.DockedRow = 0;
+            buttonTool3.InstanceProps.IsFirstInGroup = true;
             buttonTool1.InstanceProps.IsFirstInGroup = true;
             ultraToolbar1.NonInheritedTools.AddRange(new Infragistics.Win.UltraWinToolbars.ToolBase[] {
+            buttonTool5,
             buttonTool3,
             buttonTool1});
             ultraToolbar1.Text = "General";
@@ -439,11 +446,17 @@
             buttonTool6.SharedPropsInternal.AppearancesLarge.Appearance = appearance4;
             buttonTool6.SharedPropsInternal.Caption = "Cerrar";
             buttonTool7.SharedPropsInternal.Caption = "ButtonTool1";
+            appearance5.Image = global::DS.Properties.Resources.add_32;
+            buttonTool8.SharedPropsInternal.AppearancesLarge.Appearance = appearance5;
+            buttonTool8.SharedPropsInternal.Caption = "Nuevo";
+            buttonTool8.SharedPropsInternal.CustomizerCaption = "Nuevo artículo";
+            buttonTool8.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.DefaultForToolType;
             this.ultraToolbarsManager1.Tools.AddRange(new Infragistics.Win.UltraWinToolbars.ToolBase[] {
             buttonTool2,
             buttonTool4,
             buttonTool6,
-            buttonTool7});
+            buttonTool7,
+            buttonTool8});
             this.ultraToolbarsManager1.UseLargeImagesOnToolbar = true;
             this.ultraToolbarsManager1.ToolClick += new Infragistics.Win.UltraWinToolbars.ToolClickEventHandler(this.ultraToolbarsManager1_ToolClick);
             // 
@@ -468,7 +481,7 @@
             this._ClientArea_Toolbars_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this._ClientArea_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left;
             this._ClientArea_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._ClientArea_Toolbars_Dock_Area_Left.Location = new System.Drawing.Point(0, 40);
+            this._ClientArea_Toolbars_Dock_Area_Left.Location = new System.Drawing.Point(0, 65);
             this._ClientArea_Toolbars_Dock_Area_Left.Name = "_ClientArea_Toolbars_Dock_Area_Left";
             this._ClientArea_Toolbars_Dock_Area_Left.Size = new System.Drawing.Size(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Left.ToolbarsManager = this.ultraToolbarsManager1;
@@ -479,7 +492,7 @@
             this._ClientArea_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this._ClientArea_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right;
             this._ClientArea_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._ClientArea_Toolbars_Dock_Area_Right.Location = new System.Drawing.Point(886, 40);
+            this._ClientArea_Toolbars_Dock_Area_Right.Location = new System.Drawing.Point(886, 65);
             this._ClientArea_Toolbars_Dock_Area_Right.Name = "_ClientArea_Toolbars_Dock_Area_Right";
             this._ClientArea_Toolbars_Dock_Area_Right.Size = new System.Drawing.Size(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Right.ToolbarsManager = this.ultraToolbarsManager1;
@@ -503,7 +516,7 @@
             this._ClientArea_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText;
             this._ClientArea_Toolbars_Dock_Area_Top.Location = new System.Drawing.Point(0, 0);
             this._ClientArea_Toolbars_Dock_Area_Top.Name = "_ClientArea_Toolbars_Dock_Area_Top";
-            this._ClientArea_Toolbars_Dock_Area_Top.Size = new System.Drawing.Size(886, 40);
+            this._ClientArea_Toolbars_Dock_Area_Top.Size = new System.Drawing.Size(886, 65);
             this._ClientArea_Toolbars_Dock_Area_Top.ToolbarsManager = this.ultraToolbarsManager1;
             // 
             // label3
@@ -633,8 +646,8 @@
             this.ultraTabPageControl1.PerformLayout();
             this.ultraTabPageControl3.ResumeLayout(false);
             this.ultraTabPageControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraNumericEditor3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraNumericEditor2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioMaximoTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioMinimoTextBox)).EndInit();
             this.ultraTabPageControl2.ResumeLayout(false);
             this.ultraTabPageControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.precioVentaEstandarTextBox)).EndInit();
@@ -696,10 +709,10 @@
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
         private System.Windows.Forms.ComboBox presentacionBaseComboBox;
         private System.Windows.Forms.Label label12;
-        private Infragistics.Win.UltraWinEditors.UltraNumericEditor ultraNumericEditor3;
+        private Infragistics.Win.UltraWinEditors.UltraNumericEditor inventarioMaximoTextBox;
         private System.Windows.Forms.Label label15;
-        private Infragistics.Win.UltraWinEditors.UltraNumericEditor ultraNumericEditor2;
+        private Infragistics.Win.UltraWinEditors.UltraNumericEditor inventarioMinimoTextBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox manejaInventarioCheckBox;
     }
 }
