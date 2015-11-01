@@ -44,8 +44,8 @@
             Infragistics.Win.UltraWinToolbars.ButtonTool buttonTool8 = new Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo");
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.cambiarNombreCheckBox = new System.Windows.Forms.CheckBox();
             this.clasificacion4TextBox = new System.Windows.Forms.TextBox();
@@ -606,14 +606,14 @@
             this.ultraTabControl1.TabIndex = 20;
             ultraTab1.TabPage = this.ultraTabPageControl1;
             ultraTab1.Text = "General";
-            ultraTab3.TabPage = this.ultraTabPageControl3;
-            ultraTab3.Text = "Inventario";
-            ultraTab2.TabPage = this.ultraTabPageControl2;
-            ultraTab2.Text = "Comercial";
+            ultraTab2.TabPage = this.ultraTabPageControl3;
+            ultraTab2.Text = "Inventario";
+            ultraTab3.TabPage = this.ultraTabPageControl2;
+            ultraTab3.Text = "Comercial";
             this.ultraTabControl1.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
             ultraTab1,
-            ultraTab3,
-            ultraTab2});
+            ultraTab2,
+            ultraTab3});
             // 
             // ultraTabSharedControlsPage1
             // 

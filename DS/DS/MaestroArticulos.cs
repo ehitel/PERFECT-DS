@@ -130,7 +130,7 @@ namespace DS
                     return;
                 }
 
-                ResultadoTransaccion res = new ArticuloCategoriaGestor().borrarRegistro(codigoCategoria);
+                ResultadoTransaccion res = new ArticuloGestor().borrarRegistro(codigoCategoria);
 
                 if (res.Resultado == TipoResultado.Error)
                 {

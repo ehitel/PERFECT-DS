@@ -95,5 +95,30 @@ namespace DS.Logica
 
         }
 
+        public ResultadoTransaccion borrarRegistro(string codigoArticulo)
+        {
+            try
+            {
+                PERFECTEntities entidad = new PERFECTEntities();
+                System.Data.Entity.Core.Objects.ObjectParameter resultado = new System.Data.Entity.Core.Objects.ObjectParameter("RESULTADO", typeof(string));
+                System.Data.Entity.Core.Objects.ObjectParameter mensaje = new System.Data.Entity.Core.Objects.ObjectParameter("MENSAJE", typeof(string));
+
+
+                entidad.PROG_ARTICULO_BORRAR(codigoArticulo, resultado, mensaje);
+
+
+                return new ResultadoTransaccion
+                {
+                    Resultado = resultado.Value.ToString().ToLower() == "ok" ? TipoResultado.Ok : TipoResultado.Error,
+                    Mensaje = mensaje.Value.ToString()
+                };
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

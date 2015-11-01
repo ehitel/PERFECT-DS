@@ -222,5 +222,14 @@ namespace DS.Logica
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_ACTUALIZA", cODIGO_ARTICULOParameter, nOMBRE_ARTICULOParameter, nOMBRE_CORTOParameter, dESCRIPCIONParameter, cODIGO_CATEGORIAParameter, cLASIFICACION1Parameter, cLASIFICACION2Parameter, cLASIFICACION3Parameter, cLASIFICACION4Parameter, pRESENTACION_BASEParameter, pERMITE_VENTAParameter, pERMITE_COMPRAParameter, cAMBIAR_DESCRIPCIONParameter, cONSULTAR_PRECIOParameter, pAGA_IMPUESTOParameter, pRECIO_VENTAParameter, mANEJA_INVENTARIOParameter, iNVENTARIO_MINIMOParameter, iNVENTARIO_MAXIMOParameter, rESULTADO, mENSAJE);
         }
+    
+        public virtual int PROG_ARTICULO_BORRAR(string cODIGO_ARTICULO, ObjectParameter rESULTADO, ObjectParameter mENSAJE)
+        {
+            var cODIGO_ARTICULOParameter = cODIGO_ARTICULO != null ?
+                new ObjectParameter("CODIGO_ARTICULO", cODIGO_ARTICULO) :
+                new ObjectParameter("CODIGO_ARTICULO", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROG_ARTICULO_BORRAR", cODIGO_ARTICULOParameter, rESULTADO, mENSAJE);
+        }
     }
 }

@@ -90,6 +90,11 @@
           <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
           <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
         </Function>
+        <Function Name="PROG_ARTICULO_BORRAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CODIGO_ARTICULO" Type="varchar" Mode="In" />
+          <Parameter Name="RESULTADO" Type="varchar(max)" Mode="InOut" />
+          <Parameter Name="MENSAJE" Type="varchar(max)" Mode="InOut" />
+        </Function>
         <Function Name="PROG_ARTICULO_CATEGORIA_ACTUALIZA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CODIGO_CATEGORIA" Type="varchar" Mode="In" />
           <Parameter Name="NOMBRE_CATEGORIA" Type="varchar" Mode="In" />
@@ -223,6 +228,11 @@
             <Parameter Name="MANEJA_INVENTARIO" Mode="In" Type="Boolean" />
             <Parameter Name="INVENTARIO_MINIMO" Mode="In" Type="Int32" />
             <Parameter Name="INVENTARIO_MAXIMO" Mode="In" Type="Int32" />
+            <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
+            <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PROG_ARTICULO_BORRAR">
+            <Parameter Name="CODIGO_ARTICULO" Mode="In" Type="String" />
             <Parameter Name="RESULTADO" Mode="InOut" Type="String" />
             <Parameter Name="MENSAJE" Mode="InOut" Type="String" />
           </FunctionImport>
@@ -487,6 +497,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="PROG_ARTICULO_ACTUALIZA" FunctionName="PERFECTModel.Store.PROG_ARTICULO_ACTUALIZA" />
+          <FunctionImportMapping FunctionImportName="PROG_ARTICULO_BORRAR" FunctionName="PERFECTModel.Store.PROG_ARTICULO_BORRAR" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
